@@ -1,14 +1,3 @@
-<!-- Aplikasi Antrian Berbasis Web 
-**********************************************
-* Developer   : Indra Styawantoro
-* Company     : Indra Studio
-* Release     : Juni 2021
-* Update      : -
-* Website     : www.indrasatya.com
-* E-mail      : indra.setyawantoro@gmail.com
-* WhatsApp    : +62-821-8686-9898
--->
-
 <!doctype html>
 <html lang="en" class="h-100">
 
@@ -38,11 +27,113 @@
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
-<body class="d-flex flex-column h-100">
+<style>
+  body {
+    background: linear-gradient(135deg, #0b3c5d, #062f4f);
+    font-family: 'Raleway', sans-serif;
+    height: 100%;
+    margin: 0;
+  }
+
+  main {
+    height: 100%;
+  }
+
+  /* Card utama */
+  .card {
+    background: transparent;
+    color: #fff;
+  }
+
+  /* Panel kiri */
+  #panel-antrian {
+    background: linear-gradient(180deg, #0d4f8b, #083b6d);
+    border-radius: 12px;
+    height: 100%;
+    padding: 100px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Judul loket */
+  .loket-title {
+    font-size: clamp(42px, 4vw, 64px);
+    font-weight: 800;
+    letter-spacing: 2px;
+  }
+
+  #nomor {
+    font-size: clamp(110px, 10vw, 180px);
+    font-weight: 900;
+  }
+
+  .fs-4 {
+    font-size: clamp(18px, 2vw, 26px) !important;
+  }
+
+  .loket-title span {
+    color: #ffeb3b;
+  }
+
+  /* Nomor antrian besar */
+  #antrian {
+    font-size: 120px !important;
+    color: #ffeb3b !important;
+    text-shadow: 0 6px 20px rgba(0,0,0,.5);
+  }
+
+  /* Panel video */
+  #panel-video {
+    height: 100%;
+    background: #000;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  #panel-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: contain;
+  }
+
+
+  /* Bar loket bawah */
+  .loket-bar {
+    background: #083b6d;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+  }
+
+  .loket-item {
+    text-align: center;
+    color: #fff;
+  }
+
+  .loket-item .kode {
+    font-size: clamp(22px, 2.5vw, 34px);
+    font-weight: bold;
+    color: #ffeb3b;
+  }
+
+  .loket-item .loket {
+    font-size: 14px;
+    opacity: .9;
+  }
+
+  .video-wrapper {
+    width: 73vw;
+    height:73vh;
+  }
+</style>
+
+<body class="d-flex flex-column h-200">
   <main class="flex-shrink-0">
-    <div class="container pt-5">
-      <div class="row justify-content-lg-center">
-        <div class="col-lg-6 mb-6">
+    <div class="container-fluid px-4 pt-3 h-100 d-flex flex-column">
+      <div class="row flex-grow-1">
+        <div class="col-12">
           <div class="px-4 py-3 mb-4 bg-white rounded-2 shadow-sm">
             <!-- judul halaman -->
             <div class="d-flex align-items-center me-md-auto">
@@ -52,17 +143,81 @@
           </div>
 
           <div class="card border-0 shadow-sm">
+            <div id="display_nomor_loket">
+              <div class="row flex-grow-1 align-items-stretch">
 
-            <div id="display_nomor_loket"></div>
-            <div class="card-body text-center d-grid p-5">
-              <div class="border border-success rounded-2 py-2 mb-5">
-                <h2 class="pt-4">ANTRIAN</h2>
-                <!-- menampilkan informasi jumlah antrian -->
-                <h1 id="antrian" class="display-1 fw-bold text-success text-center lh-1 pb-2"></h1>
+                <!-- PANEL KIRI -->
+                <div class="col-md-4 col-lg-3 h-100">
+                  <div id="panel-antrian" class="h-100">
+                    <div class="loket-title">
+                      LOKET <span id=kode>A</span>
+                    </div>
+                    <div class="mt-4">
+                      <div class="fs-4">NOMOR ANTRIAN</div>
+                      <div id="nomor" class="fw-bold">B4</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- PANEL KANAN -->
+               <div class="video-wrapper col-lg-9 col-md-8">
+                  <div id="panel-video" class="h-100">
+                    <iframe
+                      src="https://www.youtube.com/embed/UnzNoIfLg08?si=jEZwxbqq_OtRX4-W"
+                      allow="autoplay"
+                      allowfullscreen
+                      >
+                    </iframe>
+                  </div>
+                </div>
+              </div>
+            
+              <!-- BAR LOKET BAWAH -->
+              <div class="row mt-4 loket-bar">
+                <div class="col loket-item">
+                  <div class="loket">LOKET 1</div>
+                  <div class="kode">A015</div>
+                </div>
+                <div class="col loket-item">
+                  <div class="loket">LOKET 2</div>
+                  <div class="kode">A011</div>
+                </div>
+                <div class="col loket-item">
+                  <div class="loket">LOKET 3</div>
+                  <div class="kode">A012</div>
+                </div>
+                <div class="col loket-item">
+                  <div class="loket">LOKET 4</div>
+                  <div class="kode">B013</div>
+                </div>
+                <div class="col loket-item">
+                  <div class="loket">LOKET 5</div>
+                  <div class="kode">B014</div>
+                </div>
+                <div class="col loket-item">
+                  <div class="loket">LOKET 6</div>
+                  <div class="kode">B014</div>
+                </div>
+                <div class="col loket-item">
+                  <div class="loket">LOKET 7</div>
+                  <div class="kode">B014</div>
+                </div>
+                <div class="col loket-item">
+                  <div class="loket">LOKET 8</div>
+                  <div class="kode">B014</div>
+                </div>
+                <div class="col loket-item">
+                  <div class="loket">LOKET 9</div>
+                  <div class="kode">B014</div>
+                </div>
+                <div class="col loket-item">
+                  <div class="loket">LOKET 10</div>
+                  <div class="kode">B014</div>
+                </div>
               </div>
             </div>
+
           </div>
-        </div>
       </div>
     </div>
   </main>
@@ -71,9 +226,9 @@
   <footer class="footer mt-auto py-4">
     <div class="container">
       <!-- copyright -->
-      <div class="copyright text-center mb-2 mb-md-0">
-        &copy; 2021 - <a href="https://www.indrasatya.com/" target="_blank" class="text-danger text-decoration-none">www.indrasatya.com</a>. All rights reserved.
-      </div>
+      <!-- <div class="copyright text-center mb-2 mb-md-0">
+        &copy; 2025 - <a href="https://www.rssoepraoen.co.id/" target="_blank" class="text-danger text-decoration-none">www.rssoepraoen.co.id</a>. All rights reserved.
+      </div> -->
     </div>
   </footer>
 
@@ -92,6 +247,7 @@
 
   <script type="text/javascript">
     $(document).ready(function() {
+      
 
       function getData() {
         $.ajax({
@@ -102,8 +258,14 @@
             var returnedData = JSON.parse(result);
             // console.log(returnedData.data[0]);
             if (returnedData.data[0]['status'] === 'Sukses') {
-              // tampilkan jumlah antrian
-              $('#antrian').load('get_antrian.php').fadeIn('slow');
+              $.ajax({
+                url: 'get_antrian.php',
+                dataType: 'json',
+                success: function(res) {
+                  $('#kode').text(res.kode);
+                  $('#nomor').text(res.kode + res.nomor);
+                }
+              });
 
               var bell = document.getElementById('tingtung');
 

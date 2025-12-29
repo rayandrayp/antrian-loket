@@ -19,5 +19,9 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
   $kodeJenis = $data['jenis']=='BPJS' ? 'B' : 'A' ;
 
   // tampilkan data
-  echo $kodeJenis.''.number_format($jumlah_antrian, 0, '', '.') . " -> Loket " . $data['id_loket'];
+  echo json_encode([
+    'kode'   => $kodeJenis,
+    'nomor'  => number_format($jumlah_antrian, 0, '', '.'),
+    'loket'  => $data['id_loket']
+  ]);
 }
