@@ -9,14 +9,15 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
   $tanggal = gmdate("Y-m-d", time() + 60 * 60 * 7);
 
   // sql statement untuk menampilkan jumlah data dari tabel "tbl_antrian_loket" berdasarkan "tanggal"
-  $query = mysqli_query($mysqli, "SELECT no_antrian as jumlah,id_loket FROM tbl_antrian_loket 
+  $query = mysqli_query($mysqli, "SELECT no_antrian as jumlah,id_loket,jenis FROM tbl_antrian_loket 
                                   WHERE tanggal='$tanggal' and status = '1'")
     or die('Ada kesalahan pada query tampil data : ' . mysqli_error($mysqli));
   // ambil data hasil query
   $data = mysqli_fetch_assoc($query);
   // buat variabel untuk menampilkan data
   $jumlah_antrian = $data['jumlah'];
+  $kodeJenis = $data['jenis']=='BPJS' ? 'B' : 'A' ;
 
   // tampilkan data
-  echo number_format($jumlah_antrian, 0, '', '.') . " -> Loket " . $data['id_loket'];
+  echo $kodeJenis.''.number_format($jumlah_antrian, 0, '', '.') . " -> Loket " . $data['id_loket'];
 }

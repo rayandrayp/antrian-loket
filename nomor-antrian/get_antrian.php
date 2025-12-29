@@ -7,8 +7,9 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
 
   //get jenis antrian dari param GET
   $jenis=$_GET['jns'];
-  
-   // ambil tanggal sekarang
+  $format= ($jenis=='bpjs')?'B':'A';
+
+  // ambil tanggal sekarang
   $tanggal = gmdate("Y-m-d", time() + 60 * 60 * 7);
 
   // sql statement untuk menampilkan jumlah data dari tabel "tbl_antrian_loket" berdasarkan "tanggal"
@@ -21,5 +22,5 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
   $jumlah_antrian = $data['jumlah']+1;
 
   // tampilkan data
-  echo number_format($jumlah_antrian, 0, '', '.');
+  echo $format.''.number_format($jumlah_antrian, 0, '', '.');
 }
