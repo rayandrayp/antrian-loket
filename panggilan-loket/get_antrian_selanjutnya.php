@@ -5,12 +5,15 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
   // panggil file "database.php" untuk koneksi ke database
   require_once "../config/database.php";
 
+  //get jenis antrian dari param GET
+  $jenis= ($_GET['jns']=='bpjs')?'BPJS':'Swasta';
+
   // ambil tanggal sekarang
   $tanggal = gmdate("Y-m-d", time() + 60 * 60 * 7);
 
   // sql statement untuk menampilkan data "no_antrian" dari tabel "tbl_antrian_loket" berdasarkan "tanggal" dan "status = 0"
   $query = mysqli_query($mysqli, "SELECT no_antrian FROM tbl_antrian_loket 
-                                  WHERE tanggal='$tanggal' AND status='0' 
+                                  WHERE tanggal='$tanggal' AND status='0' and jenis='$jenis'
                                   ORDER BY no_antrian ASC LIMIT 1")
                                   or die('Ada kesalahan pada query tampil data : ' . mysqli_error($mysqli));
   // ambil jumlah baris data hasil query

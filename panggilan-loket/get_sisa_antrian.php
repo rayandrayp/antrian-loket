@@ -5,18 +5,21 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
   // panggil file "database.php" untuk koneksi ke database
   require_once "../config/database.php";
 
+  //get jenis antrian dari param GET
+  $jenis= ($_GET['jns']=='bpjs')?'BPJS':'Swasta';
+
   // ambil tanggal sekarang
   $tanggal = gmdate("Y-m-d", time() + 60 * 60 * 7);
 
-  // sql statement untuk menampilkan jumlah data dari tabel "tbl_antrian_loket" berdasarkan "tanggal"
+  // sql statement untuk menampilkan jumlah data dari tabel "tbl_antrian_loket" berdasarkan "tanggal" dan "status = 0"
   $query = mysqli_query($mysqli, "SELECT count(id) as jumlah FROM tbl_antrian_loket 
-                                  WHERE tanggal='$tanggal'")
+                                  WHERE tanggal='$tanggal' AND status='0' and jenis='$jenis'")
                                   or die('Ada kesalahan pada query tampil data : ' . mysqli_error($mysqli));
   // ambil data hasil query
   $data = mysqli_fetch_assoc($query);
   // buat variabel untuk menampilkan data
-  $jumlah_antrian = $data['jumlah'];
+  $sisa_antrian = $data['jumlah'];
 
   // tampilkan data
-  echo number_format($jumlah_antrian, 0, '', '.');
+  echo number_format($sisa_antrian, 0, '', '.');
 }

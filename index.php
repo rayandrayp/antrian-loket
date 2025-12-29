@@ -74,12 +74,44 @@
               </div>
               <h3>Panggilan Antrian</h3>
               <p class="mb-4">Halaman Panggilan Antrian digunakan petugas loket untuk memanggil antrian pengunjung.</p>
-              <a href="panggilan-loket1" class="btn btn-success rounded-pill px-4 py-2">
+              <a href="panggilan-loket/index.php?loket=1" class="btn btn-success rounded-pill px-4 py-2">
                 Loket 1 <i class="bi-chevron-right ms-2"></i>
               </a>
               &nbsp;
-              <a href="panggilan-loket2" class="btn btn-success rounded-pill px-4 py-2">
+              <a href="panggilan-loket/index.php?loket=2" class="btn btn-success rounded-pill px-4 py-2">
                 Loket 2 <i class="bi-chevron-right ms-2"></i>
+              </a>
+              &nbsp;
+              <a href="panggilan-loket/index.php?loket=3" class="btn btn-success rounded-pill px-4 py-2">
+                Loket 3 <i class="bi-chevron-right ms-2"></i>
+              </a>
+              &nbsp;
+              <a href="panggilan-loket/index.php?loket=4" class="btn btn-success rounded-pill px-4 py-2">
+                Loket 4 <i class="bi-chevron-right ms-2"></i>
+              </a>
+              &nbsp;
+              <a href="panggilan-loket/index.php?loket=5" class="btn btn-success rounded-pill px-4 py-2">
+                Loket 5 <i class="bi-chevron-right ms-2"></i>
+              </a>
+              &nbsp;
+              <a href="panggilan-loket/index.php?loket=6" class="btn btn-success rounded-pill px-4 py-2">
+                Loket 6 <i class="bi-chevron-right ms-2"></i>
+              </a>
+              &nbsp;
+              <a href="panggilan-loket/index.php?loket=7" class="btn btn-success rounded-pill px-4 py-2">
+                Loket 7 <i class="bi-chevron-right ms-2"></i>
+              </a>
+              &nbsp;
+              <a href="panggilan-loket/index.php?loket=8" class="btn btn-success rounded-pill px-4 py-2">
+                Loket 8 <i class="bi-chevron-right ms-2"></i>
+              </a>
+              &nbsp;
+              <a href="panggilan-loket/index.php?loket=9" class="btn btn-success rounded-pill px-4 py-2">
+                Loket 9 <i class="bi-chevron-right ms-2"></i>
+              </a>
+              &nbsp;
+              <a href="panggilan-loket/index.php?loket=10" class="btn btn-success rounded-pill px-4 py-2">
+                Loket 10 <i class="bi-chevron-right ms-2"></i>
               </a>
             </div>
           </div>

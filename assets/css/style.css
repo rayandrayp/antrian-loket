@@ -105,6 +105,17 @@ body {
   border-radius: 100%;
 }
 
+.feature-icon-4 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  font-size: 2.5rem;
+  color: #fff;
+  border-radius: 100%;
+}
+
 .breadcrumb {
   font-size: 15px;
 }
@@ -114,11 +125,16 @@ body {
   vertical-align: middle;
 }
 
-.table>:not(:last-child)>:last-child>* {
+.table > :not(:last-child) > :last-child > * {
   border-bottom-color: #dee2e6;
 }
 
-tbody, td, tfoot, th, thead, tr {
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
   border-color: #ebedf2 !important;
 }
 
