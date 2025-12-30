@@ -150,11 +150,11 @@
                 <div class="col-md-4 col-lg-3 h-100">
                   <div id="panel-antrian" class="h-100">
                     <div class="loket-title">
-                      LOKET <span id=kode>A</span>
+                      LOKET <span id=kode></span>
                     </div>
                     <div class="mt-4">
                       <div class="fs-4">NOMOR ANTRIAN</div>
-                      <div id="nomor" class="fw-bold">B4</div>
+                      <div id="nomor" class="fw-bold"></div>
                     </div>
                   </div>
                 </div>
@@ -176,7 +176,7 @@
               <div class="row mt-4 loket-bar">
                 <div class="col loket-item">
                   <div class="loket">LOKET 1</div>
-                  <div class="kode">A015</div>
+                  <div class="nomor">A015</div>
                 </div>
                 <div class="col loket-item">
                   <div class="loket">LOKET 2</div>
