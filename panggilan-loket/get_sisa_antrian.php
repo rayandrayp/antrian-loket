@@ -11,6 +11,10 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
       $jenis = 'BPJS';
   } elseif ($jns === 'lab') {
       $jenis = 'LAB';
+  } elseif ($jns === 'ranap') {
+      $jenis = 'RANAP';
+  } elseif ($jns === 'jkn') {
+      $jenis = 'JKN';
   } else {
       $jenis = 'Swasta';
   }

@@ -12,10 +12,13 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
       $jenis = 'BPJS';
   } elseif ($jns === 'lab') {
       $jenis = 'LAB';
+  } elseif ($jns === 'ranap') {
+      $jenis = 'RANAP';
+  } elseif ($jns === 'jkn') {
+      $jenis = 'JKN';
   } else {
       $jenis = 'Swasta';
   }
-
   // ambil tanggal sekarang
   $tanggal = gmdate("Y-m-d", time() + 60 * 60 * 7);
 
@@ -35,7 +38,11 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
     // ambil data hasil query
     while ($row = mysqli_fetch_assoc($query)) {
       $data['id']         = $row["id"];
-      $data['no_antrian'] = ($row["jenis"] === 'BPJS' ? 'B' : ($row["jenis"] === 'LAB'  ? 'L' : 'A')) . $row["no_antrian"];
+      $data['no_antrian'] = $data['no_antrian'] =
+                            ($row["jenis"] === 'BPJS' ? 'B' :
+                            ($row["jenis"] === 'LAB'  ? 'L' :
+                            ($row["jenis"] === 'RANAP'  ? 'R' :  
+                            ($row["jenis"] === 'JKN'  ? 'J' : 'A')))) . $row["no_antrian"];
       $data['status']     = $row["status"];
 
       array_push($response["data"], $data);

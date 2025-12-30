@@ -24,7 +24,11 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
     // ambil data hasil query
     while ($row = mysqli_fetch_assoc($query)) {
       $data['id']         = $row["id"];
-      $data['no_antrian'] = ($row["jenis"]=='BPJS' ? 'B' : 'A') . $row["no_antrian"];
+      $data['no_antrian'] = $data['no_antrian'] =
+                            ($row["jenis"] === 'BPJS' ? 'B' :
+                            ($row["jenis"] === 'LAB'  ? 'L' :
+                            ($row["jenis"] === 'RANAP'  ? 'R' :  
+                            ($row["jenis"] === 'JKN'  ? 'J' : 'A')))) . $row["no_antrian"];
       $data['id_loket'] = $row["id_loket"];
       $data['status']     = "Sukses";
 

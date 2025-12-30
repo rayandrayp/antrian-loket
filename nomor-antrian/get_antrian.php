@@ -11,6 +11,10 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
     $format = 'B';
   } elseif ($jenis == 'lab') {
     $format = 'L';
+  } elseif ($jenis == 'ranap') {
+    $format = 'R';
+  } elseif ($jenis == 'jkn') {
+    $format = 'J';
   } else {
     $format = 'A'; 
   }
