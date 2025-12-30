@@ -332,7 +332,8 @@
               bell.pause();
               bell.currentTime = 0;
               bell.play();
-
+              $('#nomor').text(returnedData.data[0]['no_antrian']);
+              $('#loket').text(returnedData.data[0]['id_loket']);
               // set delay antara suara bell dengan suara nomor antrian
               durasi_bell = bell.duration * 770;
               // console.log("nomor_antrian : ".returnedData.data[0]['no_antrian']);
