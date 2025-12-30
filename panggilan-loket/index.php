@@ -479,7 +479,7 @@
         "columns": [
           {
             "data": "id",
-            "visible": true
+            "visible": false
           },
           {
             "data": "no_antrian",
@@ -524,7 +524,7 @@
         "order": [
           [0, "desc"] // urutkan data berdasarkan "no_antrian" secara descending
         ],
-        "iDisplayLength": 10, // tampilkan 10 data per halaman
+        "iDisplayLength": 5, // tampilkan 10 data per halaman
       });
 
       var tableSwasta = $('#tabel-antrian-swasta').DataTable({
@@ -535,7 +535,7 @@
         "columns": [
           {
             "data": "id",
-            "visible": true
+            "visible": false
           },
           {
             "data": "no_antrian",
@@ -580,7 +580,7 @@
         "order": [
           [0, "desc"] // urutkan data berdasarkan "no_antrian" secara descending
         ],
-        "iDisplayLength": 10, // tampilkan 10 data per halaman
+        "iDisplayLength": 5, // tampilkan 10 data per halaman
       });
 
       // menampilkan data antrian menggunakan DataTables
@@ -592,7 +592,7 @@
         "columns": [
           {
             "data": "id",
-            "visible": true
+            "visible": false
           },
           {
             "data": "no_antrian",
@@ -637,7 +637,7 @@
         "order": [
           [0, "desc"] // urutkan data berdasarkan "no_antrian" secara descending
         ],
-        "iDisplayLength": 10, // tampilkan 10 data per halaman
+        "iDisplayLength": 5, // tampilkan 10 data per halaman
       });
 
       var tableJKN = $('#tabel-antrian-jkn').DataTable({
@@ -648,7 +648,7 @@
         "columns": [
           {
             "data": "id",
-            "visible": true
+            "visible": false
           },
           {
             "data": "no_antrian",
@@ -693,7 +693,7 @@
         "order": [
           [0, "desc"] // urutkan data berdasarkan "no_antrian" secara descending
         ],
-        "iDisplayLength": 10, // tampilkan 10 data per halaman
+        "iDisplayLength": 5, // tampilkan 10 data per halaman
       });
 
       var tableRANAP = $('#tabel-antrian-ranap').DataTable({
@@ -704,7 +704,7 @@
         "columns": [
           {
             "data": "id",
-            "visible": true
+            "visible": false
           },
           {
             "data": "no_antrian",
@@ -749,7 +749,7 @@
         "order": [
           [0, "desc"] // urutkan data berdasarkan "no_antrian" secara descending
         ],
-        "iDisplayLength": 10, // tampilkan 10 data per halaman
+        "iDisplayLength": 5, // tampilkan 10 data per halaman
       });
 
 
