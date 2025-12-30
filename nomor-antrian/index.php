@@ -43,15 +43,7 @@
     <div class="container pt-5">
       <div class="row justify-content-lg-center">
         
-        <div class="col-lg-4 mb-4">
-          <div class="px-4 py-3 mb-4 bg-white rounded-2 shadow-sm">
-            <!-- judul halaman -->
-            <div class="d-flex align-items-center me-md-auto">
-              <i class="bi-people-fill text-success me-3 fs-3"></i>
-              <h1 class="h5 pt-2">Nomor Antrian BPJS</h1>
-            </div>
-          </div>
-        
+        <div class="col-lg-4 mb-4"> 
           <div class="card border-0 shadow-sm">
             <div id="printAntrianLoketBPJS" style="display: none;" class="cetak">
               <div style="width: 200px; font-family: Tahoma; margin-top: 10px; margin-right: 5px; margin-bottom: 100px; margin-left: 15px; font-size: 21px !important;border: 0px solid #000;">
@@ -82,14 +74,6 @@
         </div>
 
         <div class="col-lg-4 mb-4">
-          <div class="px-4 py-3 mb-4 bg-white rounded-2 shadow-sm">
-            <!-- judul halaman -->
-            <div class="d-flex align-items-center me-md-auto">
-              <i class="bi-people-fill text-success me-3 fs-3"></i>
-              <h1 class="h5 pt-2">Nomor Antrian Swasta</h1>
-            </div>
-          </div>
-        
           <div class="card border-0 shadow-sm">
             <div id="printAntrianLoketSwasta" style="display: none;" class="cetak">
               <div style="width: 200px; font-family: Tahoma; margin-top: 10px; margin-right: 5px; margin-bottom: 100px; margin-left: 15px; font-size: 21px !important;border: 0px solid #000;">
@@ -119,14 +103,6 @@
         </div>
 
         <div class="col-lg-4 mb-4">
-          <div class="px-4 py-3 mb-4 bg-white rounded-2 shadow-sm">
-            <!-- judul halaman -->
-            <div class="d-flex align-items-center me-md-auto">
-              <i class="bi-people-fill text-success me-3 fs-3"></i>
-              <h1 class="h5 pt-2">Nomor Antrian Laboratorium</h1>
-            </div>
-          </div>
-        
           <div class="card border-0 shadow-sm">
             <div id="printAntrianLoketLAB" style="display: none;" class="cetak">
               <div style="width: 200px; font-family: Tahoma; margin-top: 10px; margin-right: 5px; margin-bottom: 100px; margin-left: 15px; font-size: 21px !important;border: 0px solid #000;">
@@ -156,14 +132,6 @@
         </div>
 
          <div class="col-lg-4 mb-4">
-          <div class="px-4 py-3 mb-4 bg-white rounded-2 shadow-sm">
-            <!-- judul halaman -->
-            <div class="d-flex align-items-center me-md-auto">
-              <i class="bi-people-fill text-success me-3 fs-3"></i>
-              <h1 class="h5 pt-2">Nomor Antrian Mobile JKN</h1>
-            </div>
-          </div>
-        
           <div class="card border-0 shadow-sm">
             <div id="printAntrianLoketJKN" style="display: none;" class="cetak">
               <div style="width: 200px; font-family: Tahoma; margin-top: 10px; margin-right: 5px; margin-bottom: 100px; margin-left: 15px; font-size: 21px !important;border: 0px solid #000;">
@@ -193,14 +161,6 @@
         </div>
 
          <div class="col-lg-4 mb-4">
-          <div class="px-4 py-3 mb-4 bg-white rounded-2 shadow-sm">
-            <!-- judul halaman -->
-            <div class="d-flex align-items-center me-md-auto">
-              <i class="bi-people-fill text-success me-3 fs-3"></i>
-              <h1 class="h5 pt-2">Nomor Antrian Rawat Inap</h1>
-            </div>
-          </div>
-        
           <div class="card border-0 shadow-sm">
             <div id="printAntrianLoketRANAP" style="display: none;" class="cetak">
               <div style="width: 200px; font-family: Tahoma; margin-top: 10px; margin-right: 5px; margin-bottom: 100px; margin-left: 15px; font-size: 21px !important;border: 0px solid #000;">
@@ -357,7 +317,7 @@
             }
           },
         });
-        printDiv('printAntrianLoketLAB');
+        printDiv('printAntrianLoketRANAP');
       });
 
     });
