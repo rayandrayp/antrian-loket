@@ -134,12 +134,23 @@
     $(document).ready(function() {
 
       function printDiv(eleId){
-          var PW = window.open('', '_blank', 'Print content');
-          PW.document.write(document.getElementById(eleId).innerHTML);
-          PW.document.close();
-          PW.focus();
-          PW.print();
-          PW.close();
+        let divContents = document.getElementById(eleId).innerHTML;
+        let originalContents = document.body.innerHTML;
+
+        // Temporarily replace body content with the div content
+        document.body.innerHTML = divContents;
+
+        // Trigger the print dialog
+        window.print();
+
+        // Restore original content after printing
+        document.body.innerHTML = originalContents;
+          // var PW = window.open('', '_blank', 'Print content');
+          // PW.document.write(document.getElementById(eleId).innerHTML);
+          // PW.document.close();
+          // PW.focus();
+          // PW.print();
+          // PW.close();
       }
       // tampilkan jumlah antrian
       $('#antrianBPJS1').load('get_antrian.php?jns=bpjs');
