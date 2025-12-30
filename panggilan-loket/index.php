@@ -131,40 +131,43 @@
 
       
       <div class="row">
-        <div class="col-md-6 mb-6">
+        <div class="col-md-4 mb-6">
           <div class="card border-0 shadow-sm">
             <div class="card-body p-4">
               <div style="text-align : center;">
                 <h1 class="h5 pt-2">Antrian Pasien BPJS</h1>
               </div>
-              <div class="d-flex justify-content-start">
-                <div class="feature-icon-4 me-4">
-                  <i class="bi-people text-warning"></i>
+              <div class="row g-3 text-center">
+                <div class="col-6 col-lg-3">
+                  <div class="stat-box">
+                    <i class="bi-people text-warning"></i>
+                    <p id="jumlah-antrian-bpjs" class="fs-3 text-warning mb-0"></p>
+                    <small>Jumlah Antrian</small>
+                  </div>
                 </div>
-                <div>
-                  <p id="jumlah-antrian-bpjs" class="fs-3 text-warning mb-1"></p>
-                  <p class="mb-0">Jumlah Antrian</p>
+
+                <div class="col-6 col-lg-3">
+                  <div class="stat-box">
+                    <i class="bi-person-check text-success"></i>
+                    <p id="antrian-sekarang-bpjs" class="fs-3 text-success mb-0"></p>
+                    <small>Antrian Sekarang</small>
+                  </div>
                 </div>
-                <div class="feature-icon-4 me-4">
-                  <i class="bi-person-check text-success"></i>
+
+                <div class="col-6 col-lg-3">
+                  <div class="stat-box">
+                    <i class="bi-person-plus text-info"></i>
+                    <p id="antrian-selanjutnya-bpjs" class="fs-3 text-info mb-0"></p>
+                    <small>Antrian Selanjutnya</small>
+                  </div>
                 </div>
-                <div>
-                  <p id="antrian-sekarang-bpjs" class="fs-3 text-success mb-1"></p>
-                  <p class="mb-0">Antrian Sekarang</p>
-                </div>
-                <div class="feature-icon-4 me-4">
-                  <i class="bi-person-plus text-info"></i>
-                </div>
-                <div>
-                  <p id="antrian-selanjutnya-bpjs" class="fs-3 text-info mb-1"></p>
-                  <p class="mb-0">Antrian Selanjutnya</p>
-                </div>
-                <div class="feature-icon-4 me-4">
-                  <i class="bi-person text-danger"></i>
-                </div>
-                <div>
-                  <p id="sisa-antrian-bpjs" class="fs-3 text-danger mb-1"></p>
-                  <p class="mb-0">Sisa Antrian</p>
+
+                <div class="col-6 col-lg-3">
+                  <div class="stat-box">
+                    <i class="bi-person text-danger"></i>
+                    <p id="sisa-antrian-bpjs" class="fs-3 text-danger mb-0"></p>
+                    <small>Sisa Antrian</small>
+                  </div>
                 </div>
               </div>
               <div class="table-responsive">
@@ -183,44 +186,102 @@
           </div>
         </div>
         
-        <div class="col-md-6 mb-6">
+        <div class="col-md-4 mb-6">
           <div class="card border-0 shadow-sm">
             <div class="card-body p-4">
               <div style="text-align : center;">
                 <h1 class="h5 pt-2">Antrian Pasien SWASTA</h1>
               </div>
-              <div class="d-flex justify-content-start">
-                <div class="feature-icon-4 me-4">
-                  <i class="bi-people text-warning"></i>
+              <div class="row g-3 text-center">
+                <div class="col-6 col-lg-3">
+                  <div class="stat-box">
+                    <i class="bi-people text-warning"></i>
+                    <p id="jumlah-antrian-swasta" class="fs-3 text-warning mb-0"></p>
+                    <small>Jumlah Antrian</small>
+                  </div>
                 </div>
-                <div>
-                  <p id="jumlah-antrian-swasta" class="fs-3 text-warning mb-1"></p>
-                  <p class="mb-0">Jumlah Antrian</p>
+
+                <div class="col-6 col-lg-3">
+                  <div class="stat-box">
+                    <i class="bi-person-check text-success"></i>
+                    <p id="antrian-sekarang-swasta" class="fs-3 text-success mb-0"></p>
+                    <small>Antrian Sekarang</small>
+                  </div>
                 </div>
-                <div class="feature-icon-4 me-4">
-                  <i class="bi-person-check text-success"></i>
+
+                <div class="col-6 col-lg-3">
+                  <div class="stat-box">
+                    <i class="bi-person-plus text-info"></i>
+                    <p id="antrian-selanjutnya-swasta" class="fs-3 text-info mb-0"></p>
+                    <small>Antrian Selanjutnya</small>
+                  </div>
                 </div>
-                <div>
-                  <p id="antrian-sekarang-swasta" class="fs-3 text-success mb-1"></p>
-                  <p class="mb-0">Antrian Sekarang</p>
-                </div>
-                <div class="feature-icon-4 me-4">
-                  <i class="bi-person-plus text-info"></i>
-                </div>
-                <div>
-                  <p id="antrian-selanjutnya-swasta" class="fs-3 text-info mb-1"></p>
-                  <p class="mb-0">Antrian Selanjutnya</p>
-                </div>
-                <div class="feature-icon-4 me-4">
-                  <i class="bi-person text-danger"></i>
-                </div>
-                <div>
-                  <p id="sisa-antrian-swasta" class="fs-3 text-danger mb-1"></p>
-                  <p class="mb-0">Sisa Antrian</p>
+
+                <div class="col-6 col-lg-3">
+                  <div class="stat-box">
+                    <i class="bi-person text-danger"></i>
+                    <p id="sisa-antrian-swasta" class="fs-3 text-danger mb-0"></p>
+                    <small>Sisa Antrian</small>
+                  </div>
                 </div>
               </div>
               <div class="table-responsive">
                 <table id="tabel-antrian-swasta" class="table table-bordered table-striped table-hover" width="100%">
+                  <thead>
+                    <tr>
+                      <th>id</th>
+                      <th>Nomor Antrian</th>
+                      <th>Status</th>
+                      <th>Panggil</th>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-6">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <div style="text-align : center;">
+                <h1 class="h5 pt-2">Antrian Pasien Laboratorium</h1>
+              </div>
+              <div class="row g-3 text-center">
+                <div class="col-6 col-lg-3">
+                  <div class="stat-box">
+                    <i class="bi-people text-warning"></i>
+                    <p id="jumlah-antrian-lab" class="fs-3 text-warning mb-0"></p>
+                    <small>Jumlah Antrian</small>
+                  </div>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                  <div class="stat-box">
+                    <i class="bi-person-check text-success"></i>
+                    <p id="antrian-sekarang-lab" class="fs-3 text-success mb-0"></p>
+                    <small>Antrian Sekarang</small>
+                  </div>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                  <div class="stat-box">
+                    <i class="bi-person-plus text-info"></i>
+                    <p id="antrian-selanjutnya-lab" class="fs-3 text-info mb-0"></p>
+                    <small>Antrian Selanjutnya</small>
+                  </div>
+                </div>
+
+                <div class="col-6 col-lg-3">
+                  <div class="stat-box">
+                    <i class="bi-person text-danger"></i>
+                    <p id="sisa-antrian-lab" class="fs-3 text-danger mb-0"></p>
+                    <small>Sisa Antrian</small>
+                  </div>
+                </div>
+              </div>
+              <div class="table-responsive">
+                <table id="tabel-antrian-lab" class="table table-bordered table-striped table-hover" width="100%">
                   <thead>
                     <tr>
                       <th>id</th>
@@ -281,6 +342,12 @@
       $('#antrian-sekarang-swasta').load('get_antrian_sekarang.php?jns=swasta');
       $('#antrian-selanjutnya-swasta').load('get_antrian_selanjutnya.php?jns=swasta');
       $('#sisa-antrian-swasta').load('get_sisa_antrian.php?jns=swasta');
+
+      $('#jumlah-antrian-lab').load('get_jumlah_antrian.php?jns=lab');
+      $('#antrian-sekarang-lab').load('get_antrian_sekarang.php?jns=lab');
+      $('#antrian-selanjutnya-lab').load('get_antrian_selanjutnya.php?jns=lab');
+      $('#sisa-antrian-lab').load('get_sisa_antrian.php?jns=lab');
+
 
       // menampilkan data antrian menggunakan DataTables
       var tableBPJS = $('#tabel-antrian-bpjs').DataTable({
@@ -395,6 +462,64 @@
         "iDisplayLength": 10, // tampilkan 10 data per halaman
       });
 
+      // menampilkan data antrian menggunakan DataTables
+      var tableLAB = $('#tabel-antrian-lab').DataTable({
+        "lengthChange": false, // non-aktifkan fitur "lengthChange"
+        "searching": false, // non-aktifkan fitur "Search"
+        "ajax": "get_antrian.php?jns=lab", // url file proses tampil data dari database
+        // menampilkan data
+        "columns": [
+          {
+            "data": "id",
+            "visible": true
+          },
+          {
+            "data": "no_antrian",
+            "width": '250px',
+            "className": 'text-center'
+          },
+          {
+            "data": "status",
+            "visible": false
+          },
+          {
+            "data": null,
+            "orderable": false,
+            "searchable": false,
+            "width": '100px',
+            "className": 'text-center',
+            "render": function(data, type, row) {
+              // jika tidak ada data "status"
+              if (data["status"] === "") {
+                // sembunyikan button panggil
+                var btn = "-";
+              }
+              // jika data "status = 0"
+              else if (data["status"] === "0") {
+                // tampilkan button panggil
+                var btn = "<button class=\"btn btn-success btn-sm rounded-circle\"><i class=\"bi-mic-fill\"></i></button>";
+              }
+              // jika data "status = 1"
+              else if (data["status"] === "1") {
+                // tampilkan button ulangi panggilan
+                var btn = "<button class=\"btn btn-secondary btn-sm rounded-circle\"><i class=\"bi-mic-fill\"></i></button>";
+              }
+              // jika data "status = 1"
+              else if (data["status"] === "2") {
+                // tampilkan button ulangi panggilan
+                var btn = "<button class=\"btn btn-secondary btn-sm rounded-circle\"><i class=\"bi-mic-fill\"></i></button>";
+              };
+              return btn;
+            }
+          },
+        ],
+        "order": [
+          [0, "desc"] // urutkan data berdasarkan "no_antrian" secara descending
+        ],
+        "iDisplayLength": 10, // tampilkan 10 data per halaman
+      });
+
+
       // panggilan antrian dan update data
       $('#tabel-antrian-bpjs tbody').on('click', 'button', function() {
         // ambil data dari datatables 
@@ -470,6 +595,43 @@
         });
       });
 
+
+      $('#tabel-antrian-lab tbody').on('click', 'button', function() {
+        // ambil data dari datatables 
+        var data = tableLAB.row($(this).parents('tr')).data();
+        console.log(data);
+        // buat variabel untuk menampilkan data "id"
+        var id = data["id"];
+        // buat variabel untuk menampilkan audio bell antrian
+        var bell = document.getElementById('tingtung');
+
+        // mainkan suara bell antrian
+        // bell.pause();
+        // bell.currentTime = 0;
+        // bell.play();
+
+        // set delay antara suara bell dengan suara nomor antrian
+        durasi_bell = bell.duration * 770;
+
+        // mainkan suara nomor antrian
+        // setTimeout(function() {
+        //   responsiveVoice.speak("Nomor Antrian, " + data["no_antrian"] + ", menuju, loket", "Indonesian Male", {
+        //     rate: 0.9,
+        //     pitch: 1,
+        //     volume: 1
+        //   });
+        // }, durasi_bell);
+
+        // proses update data
+        $.ajax({
+          type: "POST", // mengirim data dengan method POST
+          url: "update.php", // url file proses update data
+          data: {
+            id: id,
+            loket: loket
+          } // tentukan data yang dikirim
+        });
+      });
       // auto reload data antrian setiap 1 detik untuk menampilkan data secara realtime
       setInterval(function() {
         $('#jumlah-antrian-bpjs').load('get_jumlah_antrian.php?jns=bpjs').fadeIn("slow");
@@ -480,8 +642,13 @@
         $('#antrian-sekarang-swasta').load('get_antrian_sekarang?jns=swasta.php').fadeIn("slow");
         $('#antrian-selanjutnya-swasta').load('get_antrian_selanjutnya.php?jns=swasta').fadeIn("slow");
         $('#sisa-antrian-swasta').load('get_sisa_antrian.php?jns=swasta').fadeIn("slow");
+        $('#jumlah-antrian-lab').load('get_jumlah_antrian.php?jns=lab').fadeIn("slow");
+        $('#antrian-sekarang-lab').load('get_antrian_sekarang.php?jns=lab').fadeIn("slow");
+        $('#antrian-selanjutnya-lab').load('get_antrian_selanjutnya.php?jns=lab').fadeIn("slow");
+        $('#sisa-antrian-lab').load('get_sisa_antrian.php?jns=lab').fadeIn("slow");
         tableBPJS.ajax.reload(null, false);
         tableSwasta.ajax.reload(null, false);
+        tableLAB.ajax.reload(null, false);
       }, 1000);
     });
   </script>

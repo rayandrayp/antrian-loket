@@ -7,7 +7,13 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
 
   //get jenis antrian dari param GET
   $jenis=$_GET['jns'];
-  $format= ($jenis=='bpjs')?'B':'A';
+  if ($jenis == 'bpjs') {
+    $format = 'B';
+  } elseif ($jenis == 'lab') {
+    $format = 'L';
+  } else {
+    $format = 'A'; 
+  }
 
   // ambil tanggal sekarang
   $tanggal = gmdate("Y-m-d", time() + 60 * 60 * 7);

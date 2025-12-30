@@ -6,7 +6,14 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
   require_once "../config/database.php";
 
   //get jenis antrian dari param GET
-  $jenis= ($_GET['jns']=='bpjs')?'BPJS':'Swasta';
+  $jns = $_GET['jns'] ?? '';
+  if ($jns === 'bpjs') {
+      $jenis = 'BPJS';
+  } elseif ($jns === 'lab') {
+      $jenis = 'LAB';
+  } else {
+      $jenis = 'Swasta';
+  }
 
   // ambil tanggal sekarang
   $tanggal = gmdate("Y-m-d", time() + 60 * 60 * 7);

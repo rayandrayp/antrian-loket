@@ -43,7 +43,7 @@
     <div class="container pt-5">
       <div class="row justify-content-lg-center">
         
-        <div class="col-lg-5 mb-4">
+        <div class="col-lg-4 mb-4">
           <div class="px-4 py-3 mb-4 bg-white rounded-2 shadow-sm">
             <!-- judul halaman -->
             <div class="d-flex align-items-center me-md-auto">
@@ -77,7 +77,7 @@
 
         </div>
 
-        <div class="col-lg-5 mb-4">
+        <div class="col-lg-4 mb-4">
           <div class="px-4 py-3 mb-4 bg-white rounded-2 shadow-sm">
             <!-- judul halaman -->
             <div class="d-flex align-items-center me-md-auto">
@@ -108,8 +108,41 @@
               </a>
             </div>
           </div>
-
         </div>
+
+        <div class="col-lg-4 mb-4">
+          <div class="px-4 py-3 mb-4 bg-white rounded-2 shadow-sm">
+            <!-- judul halaman -->
+            <div class="d-flex align-items-center me-md-auto">
+              <i class="bi-people-fill text-success me-3 fs-3"></i>
+              <h1 class="h5 pt-2">Nomor Antrian Laboratorium</h1>
+            </div>
+          </div>
+        
+          <div class="card border-0 shadow-sm">
+            <div id="printAntrianLoketLAB" style="display: none;" class="cetak">
+              <div style="width: 200px; font-family: Tahoma; margin-top: 10px; margin-right: 5px; margin-bottom: 100px; margin-left: 15px; font-size: 21px !important;border: 0px solid #000;">
+                <p style="font-size:12px;" align="center">RS Tk. II dr. Soepraoen<br><span class="small">Jl. S. Supriyadi No.22 , Sukun</span></p>
+                <hr>
+                <p align="center">Antrian Loket Laboratorium</p>
+                <div id="antrianLAB1" align="center" style="font-size: 48px !important;"></div>
+              </div>
+            </div>
+            <div id="display_nomor_loket"></div>
+            <div class="card-body text-center d-grid p-5">
+              <div class="border border-success rounded-2 py-2 mb-5">
+                <h3 class="pt-4">ANTRIAN LABORAT</h3>
+                <!-- menampilkan informasi jumlah antrian -->
+                <h1 id="antrianLAB" class="display-1 fw-bold text-success text-center lh-1 pb-2"></h1>
+              </div>
+              <!-- button pengambilan nomor antrian -->
+              <a id="insertLAB" href="javascript:void(0)" class="btn btn-success btn-block rounded-pill fs-5 px-5 py-4 mb-2">
+                <i class="bi-person-plus fs-4 me-2"></i> Ambil Nomor
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </main>
@@ -144,9 +177,13 @@
       // tampilkan jumlah antrian
       $('#antrianBPJS1').load('get_antrian.php?jns=bpjs');
       $('#antrianBPJS').load('get_antrian.php?jns=bpjs');
-
+      
       $('#antrianSwasta1').load('get_antrian.php?jns=swasta');
       $('#antrianSwasta').load('get_antrian.php?jns=swasta');
+
+      $('#antrianLAB1').load('get_antrian.php?jns=lab');
+      $('#antrianLAB').load('get_antrian.php?jns=lab');
+      
 
       // proses insert data
       $('#insertBPJS').on('click', function() {
@@ -182,6 +219,23 @@
         });
         printDiv('printAntrianLoketSwasta');
       });
+
+      $('#insertLAB').on('click', function() {
+        $.ajax({
+          type: 'POST',                     // mengirim data dengan method POST
+          url: 'insert.php?jns=lab',                // url file proses insert data
+          success: function(result) {       // ketika proses insert data selesai
+            // jika berhasil
+            if (result === 'Sukses') {
+              // tampilkan jumlah antrian
+              $('#antrianLAB').load('get_antrian.php?jns=lab').fadeIn('slow');
+              $('#antrianLAB1').load('get_antrian.php?jns=lab').fadeIn('slow');
+            }
+          },
+        });
+        printDiv('printAntrianLoketLAB');
+      });
+
     });
   </script>
 </body>
