@@ -28,15 +28,22 @@
 </head>
 
 <style>
-  body {
-    background: linear-gradient(135deg, #0b3c5d, #062f4f);
-    font-family: 'Raleway', sans-serif;
+  html, body {
     height: 100%;
     margin: 0;
   }
 
+  body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0b3c5d, #062f4f);
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+
   main {
-    height: 100%;
+    flex: 1;
+    display: flex;
   }
 
   /* Card utama */
@@ -48,14 +55,16 @@
   /* Panel kiri */
   #panel-antrian {
     background: linear-gradient(180deg, #0d4f8b, #083b6d);
-    border-radius: 12px;
+    border-radius: 16px;
     height: 100%;
-    padding: 100px 100px;
+
+    padding: clamp(24px, 4vw, 64px);
+
     display: flex;
     flex-direction: column;
     justify-content: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,.25);
   }
-
   /* Judul loket */
   .loket-title {
     font-size: clamp(42px, 4vw, 64px);
@@ -85,6 +94,8 @@
 
   /* Panel video */
   #panel-video {
+    position: relative;
+    width: 100%;
     height: 100%;
     background: #000;
     border-radius: 16px;
@@ -92,47 +103,47 @@
   }
 
   #panel-video iframe {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     border: none;
-    object-fit: contain;
   }
 
 
   /* Bar loket bawah */
   .loket-bar {
     background: #083b6d;
-    border-radius: 10px;
-    padding: 15px;
-    margin-top: 20px;
-  }
-
-  .loket-item {
-    text-align: center;
-    color: #fff;
+    border-radius: 12px;
+    padding: 20px;
   }
 
   .loket-item .kode {
-    font-size: clamp(22px, 2.5vw, 34px);
-    font-weight: bold;
+    font-size: clamp(20px, 2vw, 32px);
+    font-weight: 800;
     color: #ffeb3b;
   }
 
   .loket-item .loket {
     font-size: 14px;
-    opacity: .9;
+    opacity: .85;
   }
 
-  .video-wrapper {
-    width: 73vw;
-    height:73vh;
+  @media (min-width: 1600px) {
+    #panel-antrian {
+      padding: 80px;
+    }
+
+    .loket-bar {
+      padding: 30px;
+    }
   }
 </style>
 
 <body class="d-flex flex-column h-200">
   <main class="flex-shrink-0">
     <div class="container-fluid px-4 pt-3 h-100 d-flex flex-column">
-      <div class="row flex-grow-1">
+      <div class="row flex-grow-1 g-4 align-items-stretch">
         <div class="col-12">
           <div class="px-4 py-3 mb-4 bg-white rounded-2 shadow-sm">
             <!-- judul halaman -->
@@ -150,73 +161,79 @@
                 <div class="col-md-4 col-lg-3 h-100">
                   <div id="panel-antrian" class="h-100">
                     <div class="loket-title">
-                      LOKET <span id=kode>A</span>
+                      LOKET <span id=loket>-</span>
                     </div>
                     <div class="mt-4">
                       <div class="fs-4">NOMOR ANTRIAN</div>
-                      <div id="nomor" class="fw-bold">B4</div>
+                      <div id="nomor" class="fw-bold">-</div>
                     </div>
                   </div>
                 </div>
 
                 <!-- PANEL KANAN -->
-               <div class="video-wrapper col-lg-9 col-md-8">
-                  <div id="panel-video" class="h-100">
+                <div class="col-lg-9 col-md-8 d-flex">
+                  <div id="panel-video" class="flex-fill">
                     <iframe
-                      src="https://www.youtube.com/embed/UnzNoIfLg08?si=jEZwxbqq_OtRX4-W"
+                      src="https://www.youtube.com/embed/UnzNoIfLg08?autoplay=1&mute=1"
                       allow="autoplay"
-                      allowfullscreen
-                      >
+                      allowfullscreen>
                     </iframe>
                   </div>
                 </div>
               </div>
             
               <!-- BAR LOKET BAWAH -->
-              <div class="row mt-4 loket-bar">
-                <div class="col loket-item">
-                  <div class="loket">LOKET 1</div>
-                  <div class="kode">A015</div>
+              <div class="loket-bar mt-4">
+                <!-- ROW 1 : LOKET 1 - 5 -->
+                <div class="row text-center mb-3">
+                  <div class="col loket-item">
+                    <div class="loket">LOKET 1</div>
+                    <div class="kode">A015</div>
+                  </div>
+                  <div class="col loket-item">
+                    <div class="loket">LOKET 2</div>
+                    <div class="kode">A011</div>
+                  </div>
+                  <div class="col loket-item">
+                    <div class="loket">LOKET 3</div>
+                    <div class="kode">A012</div>
+                  </div>
+                  <div class="col loket-item">
+                    <div class="loket">LOKET 4</div>
+                    <div class="kode">B013</div>
+                  </div>
+                  <div class="col loket-item">
+                    <div class="loket">LOKET 5</div>
+                    <div class="kode">B014</div>
+                  </div>
                 </div>
-                <div class="col loket-item">
-                  <div class="loket">LOKET 2</div>
-                  <div class="kode">A011</div>
-                </div>
-                <div class="col loket-item">
-                  <div class="loket">LOKET 3</div>
-                  <div class="kode">A012</div>
-                </div>
-                <div class="col loket-item">
-                  <div class="loket">LOKET 4</div>
-                  <div class="kode">B013</div>
-                </div>
-                <div class="col loket-item">
-                  <div class="loket">LOKET 5</div>
-                  <div class="kode">B014</div>
-                </div>
-                <div class="col loket-item">
-                  <div class="loket">LOKET 6</div>
-                  <div class="kode">B014</div>
-                </div>
-                <div class="col loket-item">
-                  <div class="loket">LOKET 7</div>
-                  <div class="kode">B014</div>
-                </div>
-                <div class="col loket-item">
-                  <div class="loket">LOKET 8</div>
-                  <div class="kode">B014</div>
-                </div>
-                <div class="col loket-item">
-                  <div class="loket">LOKET 9</div>
-                  <div class="kode">B014</div>
-                </div>
-                <div class="col loket-item">
-                  <div class="loket">LOKET 10</div>
-                  <div class="kode">B014</div>
+              </div>  
+              <div class="loket-bar mt-4">
+                <!-- ROW 2 : LOKET 6 - 10 -->
+                <div class="row text-center">
+                  <div class="col loket-item">
+                    <div class="loket">LOKET 6</div>
+                    <div class="kode">B014</div>
+                  </div>
+                  <div class="col loket-item">
+                    <div class="loket">LOKET 7</div>
+                    <div class="kode">B014</div>
+                  </div>
+                  <div class="col loket-item">
+                    <div class="loket">LOKET 8</div>
+                    <div class="kode">B014</div>
+                  </div>
+                  <div class="col loket-item">
+                    <div class="loket">LOKET 9</div>
+                    <div class="kode">B014</div>
+                  </div>
+                  <div class="col loket-item">
+                    <div class="loket">LOKET 10</div>
+                    <div class="kode">B014</div>
+                  </div>
                 </div>
               </div>
             </div>
-
           </div>
       </div>
     </div>
@@ -264,6 +281,7 @@
                 success: function(res) {
                   $('#kode').text(res.kode);
                   $('#nomor').text(res.kode + res.nomor);
+                  $('#loket').text(res.loket);
                 }
               });
 
