@@ -28,11 +28,15 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
     $no_antrian = $data['no_antrian'];
 
     // tampilkan data
-    echo
-      ($data["jenis"] === 'BPJS' ? 'B' :
-      ($data["jenis"] === 'LAB'  ? 'L' :
-      ($data["jenis"] === 'JKN'  ? 'J' : 
-      ($data["jenis"] === 'RANAP'  ? 'R' :  'A')))) . number_format($no_antrian, 0, '', '.');
+    $kode = match ($data['jenis']) {
+      'BPJS'  => 'B',
+      'LAB'   => 'L',
+      'JKN'   => 'J',
+      'RANAP' => 'R',
+      default => 'A',
+    };
+
+    echo $kode . number_format($no_antrian, 0, '', '.');
   } 
   // jika data "no_antrian" tidak ada
   else {

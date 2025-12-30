@@ -16,11 +16,13 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
   $data = mysqli_fetch_assoc($query);
   // buat variabel untuk menampilkan data
   $jumlah_antrian = $data['jumlah'];
-  $kodeJenis =
-    (($data['jenis'] === 'BPJS') ? 'B' :
-    ($data['jenis'] === 'LAB') ? 'L' : 
-    ($data['jenis'] === 'JKN') ? 'J' : 
-    ($data['jenis'] === 'RANAP') ? 'R' : 'A');
+  $kodeJenis = switch ($data['jenis']) {
+    case 'BPJS':  $kodeJenis = 'B'; break;
+    case 'LAB':   $kodeJenis = 'L'; break;
+    case 'JKN':   $kodeJenis = 'J'; break;
+    case 'RANAP': $kodeJenis = 'R'; break;
+    default:      $kodeJenis = 'A';
+  }
 
   // tampilkan data
   echo json_encode([
