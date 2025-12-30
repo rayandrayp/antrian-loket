@@ -17,8 +17,8 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
   // buat variabel untuk menampilkan data
   $jumlah_antrian = $data['jumlah'];
   $kodeJenis =
-    ($data['jenis'] === 'BPJS') ? 'B' :
-    (($data['jenis'] === 'LAB') ? 'L' : 
+    (($data['jenis'] === 'BPJS') ? 'B' :
+    ($data['jenis'] === 'LAB') ? 'L' : 
     ($data['jenis'] === 'JKN') ? 'J' : 
     ($data['jenis'] === 'RANAP') ? 'R' : 'A');
 
