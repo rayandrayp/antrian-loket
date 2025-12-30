@@ -36,6 +36,7 @@
   body {
     min-height: 100vh;
     background: linear-gradient(135deg, #0b3c5d, #062f4f);
+    font-family: "Arial", Times, serif;
     display: flex;
     flex-direction: column;
   }
@@ -69,6 +70,7 @@
     font-size: clamp(42px, 4vw, 64px);
     font-weight: 800;
     letter-spacing: 2px;
+    text-align: center;
   }
 
   #nomor {
@@ -78,21 +80,22 @@
     white-space: nowrap;      /* ⬅️ KUNCI 1 BARIS */
     line-height: 1;           /* ⬅️ RAPAT */
     overflow: hidden;
+    text-align: center;
+    color: #ffeb3b;
   }
 
   .fs-4 {
     font-size: clamp(18px, 2vw, 26px) !important;
+    text-align: center;
   }
 
-  .loket-title span {
-    color: #ffeb3b;
-  }
 
   /* Nomor antrian besar */
   #antrian {
     font-size: 120px !important;
     color: #ffeb3b !important;
     text-shadow: 0 6px 20px rgba(0,0,0,.5);
+    text-align: center;
   }
 
   /* Panel video */
@@ -115,30 +118,50 @@
 
 
   /* Bar loket bawah */
-  .loket-bar {
-    background: #083b6d;
-    border-radius: 12px;
-    padding: 20px;
+  .loket-item {
+    background: linear-gradient(180deg, #0d4f8b, #083b6d);
+    border-radius: 18px;
+    padding: 20px 12px;
+
+    border: 2px solid rgba(255,255,255,0.25);
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
+
+    min-height: 90px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
+  .loket-item:hover {
+    border-color: #ffeb3b;
+    background: rgba(255,235,59,0.08);
+    transform: translateY(-3px);
+  }
+
+  .loket-item .loket {
+    font-size: 35px;
+    opacity: .85;
   }
 
   .loket-item .kode {
-    font-size: clamp(20px, 2vw, 32px);
+    font-size: 50px;
     font-weight: 800;
     color: #ffeb3b;
   }
 
-  .loket-item .loket {
-    font-size: 14px;
-    opacity: .85;
+  .loket-bar {
+    padding: 24px;
   }
 
   @media (min-width: 1600px) {
     #panel-antrian {
       padding: 80px;
     }
-
-    .loket-bar {
-      padding: 30px;
+    .row.g-3 {
+      --bs-gutter-x: 2rem;
+      --bs-gutter-y: 2rem;
     }
   }
 </style>
@@ -187,52 +210,53 @@
             
               <!-- BAR LOKET BAWAH -->
               <div class="loket-bar mt-4">
-                <!-- ROW 1 : LOKET 1 - 5 -->
-                <div class="row text-center mb-3">
+                <!-- ROW 1 -->
+                <div class="row text-center g-3">
                   <div class="col loket-item">
                     <div class="loket">LOKET 1</div>
-                    <div class="kode">A015</div>
+                    <div class="kode nomor">-</div>
                   </div>
                   <div class="col loket-item">
                     <div class="loket">LOKET 2</div>
-                    <div class="kode">A011</div>
+                    <div class="kode nomor">-</div>
                   </div>
                   <div class="col loket-item">
                     <div class="loket">LOKET 3</div>
-                    <div class="kode">A012</div>
+                    <div class="kode nomor">-</div>
                   </div>
                   <div class="col loket-item">
                     <div class="loket">LOKET 4</div>
-                    <div class="kode">B013</div>
+                    <div class="kode nomor">-</div>
                   </div>
                   <div class="col loket-item">
                     <div class="loket">LOKET 5</div>
-                    <div class="kode">B014</div>
+                    <div class="kode nomor">-</div>
                   </div>
                 </div>
-              </div>  
-              <div class="loket-bar mt-4">
-                <!-- ROW 2 : LOKET 6 - 10 -->
-                <div class="row text-center">
+              </div>
+
+              <div class="loket-bar mt-3">
+                <!-- ROW 2 -->
+                <div class="row text-center g-3">
                   <div class="col loket-item">
                     <div class="loket">LOKET 6</div>
-                    <div class="kode">B014</div>
+                    <div class="kode">-</div>
                   </div>
                   <div class="col loket-item">
                     <div class="loket">LOKET 7</div>
-                    <div class="kode">B014</div>
+                    <div class="kode">-</div>
                   </div>
                   <div class="col loket-item">
                     <div class="loket">LOKET 8</div>
-                    <div class="kode">B014</div>
+                    <div class="kode">-</div>
                   </div>
                   <div class="col loket-item">
                     <div class="loket">LOKET 9</div>
-                    <div class="kode">B014</div>
+                    <div class="kode">-</div>
                   </div>
                   <div class="col loket-item">
                     <div class="loket">LOKET 10</div>
-                    <div class="kode">B014</div>
+                    <div class="kode">-</div>
                   </div>
                 </div>
               </div>
