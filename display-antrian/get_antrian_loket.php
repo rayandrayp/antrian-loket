@@ -26,17 +26,32 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
     $data = mysqli_fetch_assoc($query);
     // buat variabel untuk menampilkan data
     $no_antrian = $data['no_antrian'];
-
+    
+    $kode = '';
     // tampilkan data
-    $kode = match ($data['jenis']) {
-      'BPJS'  => 'B',
-      'LAB'   => 'L',
-      'JKN'   => 'J',
-      'RANAP' => 'R',
-      default => 'A',
-    };
+    switch ($data['jenis']) {
+          case 'BPJS':
+              $kode = 'B';
+              break;
+
+          case 'LAB':
+              $kode = 'L';
+              break;
+
+          case 'RANAP':
+              $kode = 'R';
+              break;
+
+          case 'JKN':
+              $kode = 'J';
+              break;
+
+          default:
+              $kode = 'A';
+    }
 
     echo $kode . number_format($no_antrian, 0, '', '.');
+
   } 
   // jika data "no_antrian" tidak ada
   else {

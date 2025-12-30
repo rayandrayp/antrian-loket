@@ -16,7 +16,8 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
   $data = mysqli_fetch_assoc($query);
   // buat variabel untuk menampilkan data
   $jumlah_antrian = $data['jumlah'];
-  $kodeJenis = switch ($data['jenis']) {
+  $kodeJenis = '';
+  switch ($data['jenis']) {
     case 'BPJS':  $kodeJenis = 'B'; break;
     case 'LAB':   $kodeJenis = 'L'; break;
     case 'JKN':   $kodeJenis = 'J'; break;
