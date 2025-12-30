@@ -55,10 +55,14 @@
           <div class="card border-0 shadow-sm">
             <div id="printAntrianLoketBPJS" style="display: none;" class="cetak">
               <div style="width: 200px; font-family: Tahoma; margin-top: 10px; margin-right: 5px; margin-bottom: 100px; margin-left: 15px; font-size: 21px !important;border: 0px solid #000;">
-                <p style="font-size:12px;" align="center">RS Tk. II dr. Soepraoen<br><span class="small">Jl. S. Supriyadi No.22 , Sukun</span></p>
+                <p style="font-size:14px;" align="center">RS Tk. II dr. Soepraoen<br><span class="small">Jl. S. Supriyadi No.22 , Sukun</span></p>
                 <hr>
                 <p align="center">Antrian Loket BPJS</p>
-                <div id="antrianBPJS1" align="center" style="font-size: 48px !important;"></div>
+                <div id="antrianBPJS1" align="center" style="font-size:72px !important;"></div>
+                <br>
+                <br>
+                <br>
+                <hr>
               </div>
             </div>
             <div id="display_nomor_loket"></div>
@@ -89,10 +93,14 @@
           <div class="card border-0 shadow-sm">
             <div id="printAntrianLoketSwasta" style="display: none;" class="cetak">
               <div style="width: 200px; font-family: Tahoma; margin-top: 10px; margin-right: 5px; margin-bottom: 100px; margin-left: 15px; font-size: 21px !important;border: 0px solid #000;">
-                <p style="font-size:12px;" align="center">RS Tk. II dr. Soepraoen<br><span class="small">Jl. S. Supriyadi No.22 , Sukun</span></p>
+                <p style="font-size:14px;" align="center">RS Tk. II dr. Soepraoen<br><span class="small">Jl. S. Supriyadi No.22 , Sukun</span></p>
                 <hr>
                 <p align="center">Antrian Loket Swasta</p>
-                <div id="antrianSwasta1" align="center" style="font-size: 48px !important;"></div>
+                <div id="antrianSwasta1" align="center" style="font-size:72px !important;"></div>
+                <br>
+                <br>
+                <br>
+                <hr>
               </div>
             </div>
             <div id="display_nomor_loket"></div>
@@ -122,10 +130,14 @@
           <div class="card border-0 shadow-sm">
             <div id="printAntrianLoketLAB" style="display: none;" class="cetak">
               <div style="width: 200px; font-family: Tahoma; margin-top: 10px; margin-right: 5px; margin-bottom: 100px; margin-left: 15px; font-size: 21px !important;border: 0px solid #000;">
-                <p style="font-size:12px;" align="center">RS Tk. II dr. Soepraoen<br><span class="small">Jl. S. Supriyadi No.22 , Sukun</span></p>
+                <p style="font-size:14px;" align="center">RS Tk. II dr. Soepraoen<br><span class="small">Jl. S. Supriyadi No.22 , Sukun</span></p>
                 <hr>
                 <p align="center">Antrian Loket Laboratorium</p>
-                <div id="antrianLAB1" align="center" style="font-size: 48px !important;"></div>
+                <div id="antrianLAB1" align="center" style="font-size:72px !important;"></div>
+                <br>
+                <br>
+                <br>
+                <hr>
               </div>
             </div>
             <div id="display_nomor_loket"></div>
@@ -155,10 +167,14 @@
           <div class="card border-0 shadow-sm">
             <div id="printAntrianLoketJKN" style="display: none;" class="cetak">
               <div style="width: 200px; font-family: Tahoma; margin-top: 10px; margin-right: 5px; margin-bottom: 100px; margin-left: 15px; font-size: 21px !important;border: 0px solid #000;">
-                <p style="font-size:12px;" align="center">RS Tk. II dr. Soepraoen<br><span class="small">Jl. S. Supriyadi No.22 , Sukun</span></p>
+                <p style="font-size:14px;" align="center">RS Tk. II dr. Soepraoen<br><span class="small">Jl. S. Supriyadi No.22 , Sukun</span></p>
                 <hr>
                 <p align="center">Antrian Loket Mobile JKN</p>
-                <div id="antrianJKN1" align="center" style="font-size: 48px !important;"></div>
+                <div id="antrianJKN1" align="center" style="font-size:72px !important;"></div>
+                <br>
+                <br>
+                <br>
+                <hr>
               </div>
             </div>
             <div id="display_nomor_loket"></div>
@@ -188,10 +204,14 @@
           <div class="card border-0 shadow-sm">
             <div id="printAntrianLoketRANAP" style="display: none;" class="cetak">
               <div style="width: 200px; font-family: Tahoma; margin-top: 10px; margin-right: 5px; margin-bottom: 100px; margin-left: 15px; font-size: 21px !important;border: 0px solid #000;">
-                <p style="font-size:12px;" align="center">RS Tk. II dr. Soepraoen<br><span class="small">Jl. S. Supriyadi No.22 , Sukun</span></p>
+                <p style="font-size:14px;" align="center">RS Tk. II dr. Soepraoen<br><span class="small">Jl. S. Supriyadi No.22 , Sukun</span></p>
                 <hr>
                 <p align="center">Antrian Loket Rawat Inap</p>
-                <div id="antrianRANAP1" align="center" style="font-size: 48px !important;"></div>
+                <div id="antrianRANAP1" align="center" style="font-size:72px !important;"></div>
+                <br>
+                <br>
+                <br>
+                <hr>
               </div>
             </div>
             <div id="display_nomor_loket"></div>
