@@ -134,7 +134,7 @@
     $(document).ready(function() {
 
       function printDiv(eleId){
-          var PW = window.open('', '_blank', 'Print content');
+          var PW = window.open('', '_blank', 'width=800,height=600');
           PW.document.write(document.getElementById(eleId).innerHTML);
           PW.document.close();
           PW.focus();
