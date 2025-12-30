@@ -161,7 +161,7 @@
                 <div class="col-md-4 col-lg-3 h-100">
                   <div id="panel-antrian" class="h-100">
                     <div class="loket-title">
-                      LOKET <span id=kode>-</span>
+                      LOKET <span id=loket>-</span>
                     </div>
                     <div class="mt-4">
                       <div class="fs-4">NOMOR ANTRIAN</div>
@@ -281,6 +281,7 @@
                 success: function(res) {
                   $('#kode').text(res.kode);
                   $('#nomor').text(res.kode + res.nomor);
+                  $('#loket').text(res.loket);
                 }
               });
 
