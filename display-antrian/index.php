@@ -36,7 +36,6 @@
   body {
     min-height: 100vh;
     background: linear-gradient(135deg, #0b3c5d, #062f4f);
-    font-family: 'Raleway', sans-serif;
     display: flex;
     flex-direction: column;
   }
@@ -73,8 +72,12 @@
   }
 
   #nomor {
-    font-size: clamp(110px, 10vw, 180px);
+    font-size: clamp(48px, 8vw, 140px);
     font-weight: 900;
+
+    white-space: nowrap;      /* ⬅️ KUNCI 1 BARIS */
+    line-height: 1;           /* ⬅️ RAPAT */
+    overflow: hidden;
   }
 
   .fs-4 {
@@ -158,7 +161,7 @@
               <div class="row flex-grow-1 align-items-stretch">
 
                 <!-- PANEL KIRI -->
-                <div class="col-md-4 col-lg-3 h-100">
+                <div class="col-md-5 col-lg-4 h-100">
                   <div id="panel-antrian" class="h-100">
                     <div class="loket-title">
                       LOKET <span id=loket>-</span>
@@ -171,7 +174,7 @@
                 </div>
 
                 <!-- PANEL KANAN -->
-                <div class="col-lg-9 col-md-8 d-flex">
+                <div class="col-md-7 col-lg-8 d-flex">
                   <div id="panel-video" class="flex-fill">
                     <iframe
                       src="https://www.youtube.com/embed/UnzNoIfLg08?autoplay=1&mute=1"
