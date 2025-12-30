@@ -214,23 +214,23 @@
                 <div class="row text-center g-3">
                   <div class="col loket-item">
                     <div class="loket">LOKET 1</div>
-                    <div class="kode nomor">-</div>
+                    <div class="kode" id="loket-bar-1">-</div>
                   </div>
                   <div class="col loket-item">
                     <div class="loket">LOKET 2</div>
-                    <div class="kode nomor">-</div>
+                    <div class="kode" id="loket-bar-2">-</div>
                   </div>
                   <div class="col loket-item">
                     <div class="loket">LOKET 3</div>
-                    <div class="kode nomor">-</div>
+                    <div class="kode" id="loket-bar-3">-</div>
                   </div>
                   <div class="col loket-item">
                     <div class="loket">LOKET 4</div>
-                    <div class="kode nomor">-</div>
+                    <div class="kode" id="loket-bar-4">-</div>
                   </div>
                   <div class="col loket-item">
                     <div class="loket">LOKET 5</div>
-                    <div class="kode nomor">-</div>
+                    <div class="kode" id="loket-bar-5">-</div>
                   </div>
                 </div>
               </div>
@@ -240,23 +240,23 @@
                 <div class="row text-center g-3">
                   <div class="col loket-item">
                     <div class="loket">LOKET 6</div>
-                    <div class="kode">-</div>
+                    <div class="kode" id="loket-bar-6">-</div>
                   </div>
                   <div class="col loket-item">
                     <div class="loket">LOKET 7</div>
-                    <div class="kode">-</div>
+                    <div class="kode" id="loket-bar-7">-</div>
                   </div>
                   <div class="col loket-item">
                     <div class="loket">LOKET 8</div>
-                    <div class="kode">-</div>
+                    <div class="kode" id="loket-bar-8">-</div>
                   </div>
                   <div class="col loket-item">
                     <div class="loket">LOKET 9</div>
-                    <div class="kode">-</div>
+                    <div class="kode" id="loket-bar-9">-</div>
                   </div>
                   <div class="col loket-item">
                     <div class="loket">LOKET 10</div>
-                    <div class="kode">-</div>
+                    <div class="kode" id="loket-bar-10">-</div>
                   </div>
                 </div>
               </div>
@@ -306,9 +306,11 @@
                 url: 'get_antrian.php',
                 dataType: 'json',
                 success: function(res) {
-                  $('#kode').text(res.kode);
-                  $('#nomor').text(res.kode + res.nomor);
-                  $('#loket').text(res.loket);
+                  let nomorAntrian = res.kode + res.nomor;
+                  let loket = res.loket;
+                  $('#nomor').text(nomorAntrian);
+                  $('#loket').text(loket);
+                  $('#loket-bar-' + loket).text(nomorAntrian);
                 }
               });
 
