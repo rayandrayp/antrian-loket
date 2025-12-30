@@ -134,23 +134,12 @@
     $(document).ready(function() {
 
       function printDiv(eleId){
-        let divContents = document.getElementById(eleId).innerHTML;
-        let originalContents = document.body.innerHTML;
-
-        // Temporarily replace body content with the div content
-        document.body.innerHTML = divContents;
-
-        // Trigger the print dialog
-        window.print();
-
-        // Restore original content after printing
-        document.body.innerHTML = originalContents;
-          // var PW = window.open('', '_blank', 'Print content');
-          // PW.document.write(document.getElementById(eleId).innerHTML);
-          // PW.document.close();
-          // PW.focus();
-          // PW.print();
-          // PW.close();
+          var PW = window.open('', '_blank', 'Print content');
+          PW.document.write(document.getElementById(eleId).innerHTML);
+          PW.document.close();
+          PW.focus();
+          PW.print();
+          PW.close();
       }
       // tampilkan jumlah antrian
       $('#antrianBPJS1').load('get_antrian.php?jns=bpjs');
@@ -187,7 +176,7 @@
             if (result === 'Sukses') {
               // tampilkan jumlah antrian
               $('#antrianSwasta').load('get_antrian.php?jns=swasta').fadeIn('slow');
-              $('#antrian1Swasta').load('get_antrian.php?jns=swasta').fadeIn('slow');
+              $('#antrianSwasta1').load('get_antrian.php?jns=swasta').fadeIn('slow');
             }
           },
         });
