@@ -108,7 +108,7 @@
     overflow: hidden;
   }
 
-  #panel-video iframe {
+  #panel-video video {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -199,11 +199,14 @@
                 <!-- PANEL KANAN -->
                 <div class="col-md-7 col-lg-8 d-flex">
                   <div id="panel-video" class="flex-fill">
-                    <iframe
-                      src="https://www.youtube.com/embed/UnzNoIfLg08?autoplay=1&mute=1"
-                      allow="autoplay"
-                      allowfullscreen>
-                    </iframe>
+                    <video
+                      autoplay
+                      muted
+                      loop
+                      playsinline
+                      controls>
+                      <source src="../assets/video/profil-rs.mp4" type="video/mp4">
+                    </video>
                   </div>
                 </div>
               </div>
@@ -277,7 +280,7 @@
   </footer>
 
   <!-- load file audio bell antrian -->
-  <audio id="tingtung" src="../assets/audio/tingtung.mp3"></audio>
+  <audio id="tingtung" src="../assets/audio/tingtunganyar.mp3"></audio>
   <!-- jQuery Core -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <!-- Popper and Bootstrap JS -->
