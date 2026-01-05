@@ -292,7 +292,7 @@
   <script src="https://code.responsivevoice.org/responsivevoice.js?key=fGfsRsUU"></script>
 
 
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
     $(document).ready(function() {
 
       setInterval(function() {
@@ -374,7 +374,156 @@
         getData();
       }, 1000);
     });
+  </script> -->
+  <script type="text/javascript">
+    $(document).ready(function () {
+      setInterval(function() {
+        $('#loket-bar-1').load('get_antrian_loket.php?loket=1').fadeIn("slow");
+        $('#loket-bar-2').load('get_antrian_loket.php?loket=2').fadeIn("slow");
+        $('#loket-bar-3').load('get_antrian_loket.php?loket=3').fadeIn("slow");
+        $('#loket-bar-4').load('get_antrian_loket.php?loket=4').fadeIn("slow");
+        $('#loket-bar-5').load('get_antrian_loket.php?loket=5').fadeIn("slow");
+        $('#loket-bar-6').load('get_antrian_loket.php?loket=6').fadeIn("slow");
+        $('#loket-bar-7').load('get_antrian_loket.php?loket=7').fadeIn("slow");
+        $('#loket-bar-8').load('get_antrian_loket.php?loket=8').fadeIn("slow");
+        $('#loket-bar-9').load('get_antrian_loket.php?loket=9').fadeIn("slow");
+        $('#loket-bar-10').load('get_antrian_loket.php?loket=10').fadeIn("slow");
+      }, 1000);
+      /* =======================
+        UPDATE DISPLAY LOKET
+      ======================== */
+      setInterval(function () {
+        for (let i = 1; i <= 10; i++) {
+          $('#loket-bar-' + i)
+            .load('get_antrian_loket.php?loket=' + i)
+            .fadeIn("slow");
+        }
+      }, 1000);
+
+
+      /* =======================
+        HELPER AUDIO
+      ======================== */
+      function playAudio(src) {
+        return new Promise((resolve) => {
+          const audio = new Audio(src);
+          audio.onended = resolve;
+          audio.play();
+        });
+      }
+
+      function splitAntrian(no) {
+        const huruf = no.match(/[A-Z]/)[0];
+        const angka = no.match(/\d+/)[0].split('');
+        return { huruf, angka };
+      }
+
+      function playNumber(num) {
+        return playAudio(`../assets/audio/${num}.wav`);
+      }
+
+      async function speak(num) {
+        num = parseInt(num, 10);
+        if (num === 0) return;
+
+        // Ratusan
+        if (num >= 100) {
+          const hundreds = Math.floor(num / 100);
+
+          if (hundreds > 1) {
+            await playNumber(hundreds);
+            await playAudio('../assets/audio/ratus.wav');
+          } else {
+            await playAudio('../assets/audio/seratus.wav');
+          }
+
+          await speak(num % 100);
+          return;
+        }
+
+        // Puluhan
+        if (num >= 20) {
+          const tens = Math.floor(num / 10);
+          await playNumber(tens);
+          await playAudio('../assets/audio/puluh.wav');
+          await speak(num % 10);
+          return;
+        }
+
+        // Belasan
+        if (num >= 12) {
+          await playNumber(num - 10);
+          await playAudio('../assets/audio/belas.wav');
+          return;
+        }
+
+        // 1–11
+        await playNumber(num);
+      }
+
+
+      /* =======================
+        AMBIL DATA ANTRIAN
+      ======================== */
+      function getData() {
+        $.ajax({
+          type: 'POST',
+          url: 'check_nomor.php',
+          success: async function (result) {
+            const returnedData = JSON.parse(result);
+
+            if (returnedData.data[0]['status'] === 'Sukses') {
+
+              const noAntrian = returnedData.data[0]['no_antrian']; // contoh: B12
+              const loket = returnedData.data[0]['id_loket'];
+
+              $('#nomor').text(noAntrian);
+              $('#loket').text(loket);
+              $('#loket-bar-' + loket).text(noAntrian);
+
+              const { huruf, angka } = splitAntrian(noAntrian);
+
+              try {
+                await playAudio('../assets/audio/tingtunganyar.mp3');
+                await playAudio('../assets/audio/antrian.wav');
+                await playAudio(`../assets/audio/${huruf}.wav`);
+                await speak(angka.join(''));
+                await playAudio('../assets/audio/loket.wav');
+                await playAudio(`../assets/audio/${loket}.wav`);
+
+              } catch (err) {
+                console.error("Error audio:", err);
+              }
+
+              update(returnedData.data[0]['id']);
+            }
+          }
+        });
+      }
+
+
+      /* =======================
+        UPDATE STATUS DATABASE
+      ======================== */
+      function update(id) {
+        $.ajax({
+          type: "POST",
+          url: "update.php",
+          data: { id: id }
+        });
+      }
+
+
+      /* =======================
+        AUTO PANGGIL DATA
+      ======================== */
+      setInterval(function () {
+        getData();
+      }, 1000);
+
+    });
   </script>
+
 </body>
 
 </html>
