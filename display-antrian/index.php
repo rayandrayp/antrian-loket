@@ -377,18 +377,6 @@
   </script> -->
   <script type="text/javascript">
     $(document).ready(function () {
-      setInterval(function() {
-        $('#loket-bar-1').load('get_antrian_loket.php?loket=1').fadeIn("slow");
-        $('#loket-bar-2').load('get_antrian_loket.php?loket=2').fadeIn("slow");
-        $('#loket-bar-3').load('get_antrian_loket.php?loket=3').fadeIn("slow");
-        $('#loket-bar-4').load('get_antrian_loket.php?loket=4').fadeIn("slow");
-        $('#loket-bar-5').load('get_antrian_loket.php?loket=5').fadeIn("slow");
-        $('#loket-bar-6').load('get_antrian_loket.php?loket=6').fadeIn("slow");
-        $('#loket-bar-7').load('get_antrian_loket.php?loket=7').fadeIn("slow");
-        $('#loket-bar-8').load('get_antrian_loket.php?loket=8').fadeIn("slow");
-        $('#loket-bar-9').load('get_antrian_loket.php?loket=9').fadeIn("slow");
-        $('#loket-bar-10').load('get_antrian_loket.php?loket=10').fadeIn("slow");
-      }, 1000);
       /* =======================
         UPDATE DISPLAY LOKET
       ======================== */
