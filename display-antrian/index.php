@@ -332,13 +332,13 @@
               var bell = document.getElementById('tingtung');
 
               // mainkan suara bell antrian
-              // bell.pause();
-              // bell.currentTime = 0;
-              // bell.play();
+              bell.pause();
+              bell.currentTime = 0;
+              bell.play();
               $('#nomor').text(returnedData.data[0]['no_antrian']);
               $('#loket').text(returnedData.data[0]['id_loket']);
               // set delay antara suara bell dengan suara nomor antrian
-              // durasi_bell = bell.duration * 770;
+              durasi_bell = bell.duration * 770;
               // console.log("nomor_antrian : ".returnedData.data[0]['no_antrian']);
               // mainkan suara nomor antrian
               //alert(returnedData.data[0]['id_loket']);
@@ -347,9 +347,9 @@
                 responsiveVoice.speak("Nomor Antrian, " + returnedData.data[0]['no_antrian'] + ", menuju, loket " + returnedData.data[0]['id_loket'], "Indonesian Female", {
                   rate: 0.9,
                   pitch: 1,
-                  volume: 2
+                  volume: 1
                 });
-              });
+              }, durasi_bell);
 
               update(returnedData.data[0]['id']);
             }
