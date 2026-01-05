@@ -347,9 +347,9 @@
                 responsiveVoice.speak("Nomor Antrian, " + returnedData.data[0]['no_antrian'] + ", menuju, loket " + returnedData.data[0]['id_loket'], "Indonesian Female", {
                   rate: 0.9,
                   pitch: 1,
-                  volume: 5
+                  volume: 2
                 });
-              }, durasi_bell);
+              });
 
               update(returnedData.data[0]['id']);
             }
