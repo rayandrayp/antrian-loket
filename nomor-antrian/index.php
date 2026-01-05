@@ -131,7 +131,7 @@
           </div>
         </div>
 
-         <div class="col-lg-4 mb-4">
+         <!-- <div class="col-lg-4 mb-4">
           <div class="card border-0 shadow-sm">
             <div id="printAntrianLoketJKN" style="display: none;" class="cetak">
               <div style="width: 200px; font-family: Tahoma; margin-top: 10px; margin-right: 5px; margin-bottom: 100px; margin-left: 15px; font-size: 21px !important;border: 0px solid #000;">
@@ -149,18 +149,16 @@
             <div class="card-body text-center d-grid p-5">
               <div class="border border-success rounded-2 py-2 mb-5">
                 <h3 class="pt-4">ANTRIAN MOBILE JKN</h3>
-                <!-- menampilkan informasi jumlah antrian -->
                 <h1 id="antrianJKN" class="display-1 fw-bold text-success text-center lh-1 pb-2"></h1>
               </div>
-              <!-- button pengambilan nomor antrian -->
               <a id="insertJKN" href="javascript:void(0)" class="btn btn-success btn-block rounded-pill fs-5 px-5 py-4 mb-2">
                 <i class="bi-person-plus fs-4 me-2"></i> Ambil Nomor
               </a>
             </div>
           </div>
-        </div>
+        </div> -->
 
-         <div class="col-lg-4 mb-4">
+         <!-- <div class="col-lg-4 mb-4">
           <div class="card border-0 shadow-sm">
             <div id="printAntrianLoketRANAP" style="display: none;" class="cetak">
               <div style="width: 200px; font-family: Tahoma; margin-top: 10px; margin-right: 5px; margin-bottom: 100px; margin-left: 15px; font-size: 21px !important;border: 0px solid #000;">
@@ -178,16 +176,14 @@
             <div class="card-body text-center d-grid p-5">
               <div class="border border-success rounded-2 py-2 mb-5">
                 <h3 class="pt-4">ANTRIAN Rawat Inap</h3>
-                <!-- menampilkan informasi jumlah antrian -->
                 <h1 id="antrianRANAP" class="display-1 fw-bold text-success text-center lh-1 pb-2"></h1>
               </div>
-              <!-- button pengambilan nomor antrian -->
               <a id="insertRANAP" href="javascript:void(0)" class="btn btn-success btn-block rounded-pill fs-5 px-5 py-4 mb-2">
                 <i class="bi-person-plus fs-4 me-2"></i> Ambil Nomor
               </a>
             </div>
           </div>
-        </div>
+        </div> -->
 
       </div>
     </div>

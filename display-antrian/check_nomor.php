@@ -45,7 +45,7 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
               $kode = 'A';
       }
       $data['no_antrian'] = $kode . $row['no_antrian'];
-      
+
       $data['id_loket'] = $row["id_loket"];
       $data['status']     = "Sukses";
 

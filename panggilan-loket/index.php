@@ -295,7 +295,7 @@
             </div>
           </div>
         </div>
-        <hr style="color:white;">
+        <!-- <hr style="color:white;">
         <div class="col-md-4 mb-6">
           <div class="card border-0 shadow-sm">
             <div class="card-body p-4">
@@ -404,7 +404,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         
       </div>
     </div>
@@ -640,117 +640,115 @@
         "iDisplayLength": 5, // tampilkan 10 data per halaman
       });
 
-      var tableJKN = $('#tabel-antrian-jkn').DataTable({
-        "lengthChange": false, // non-aktifkan fitur "lengthChange"
-        "searching": false, // non-aktifkan fitur "Search"
-        "ajax": "get_antrian.php?jns=jkn", // url file proses tampil data dari database
-        // menampilkan data
-        "columns": [
-          {
-            "data": "id",
-            "visible": false
-          },
-          {
-            "data": "no_antrian",
-            "width": '250px',
-            "className": 'text-center'
-          },
-          {
-            "data": "status",
-            "visible": false
-          },
-          {
-            "data": null,
-            "orderable": false,
-            "searchable": false,
-            "width": '100px',
-            "className": 'text-center',
-            "render": function(data, type, row) {
-              // jika tidak ada data "status"
-              if (data["status"] === "") {
-                // sembunyikan button panggil
-                var btn = "-";
-              }
-              // jika data "status = 0"
-              else if (data["status"] === "0") {
-                // tampilkan button panggil
-                var btn = "<button class=\"btn btn-success btn-sm rounded-circle\"><i class=\"bi-mic-fill\"></i></button>";
-              }
-              // jika data "status = 1"
-              else if (data["status"] === "1") {
-                // tampilkan button ulangi panggilan
-                var btn = "<button class=\"btn btn-secondary btn-sm rounded-circle\"><i class=\"bi-mic-fill\"></i></button>";
-              }
-              // jika data "status = 1"
-              else if (data["status"] === "2") {
-                // tampilkan button ulangi panggilan
-                var btn = "<button class=\"btn btn-secondary btn-sm rounded-circle\"><i class=\"bi-mic-fill\"></i></button>";
-              };
-              return btn;
-            }
-          },
-        ],
-        "order": [
-          [0, "desc"] // urutkan data berdasarkan "no_antrian" secara descending
-        ],
-        "iDisplayLength": 5, // tampilkan 10 data per halaman
-      });
+      // var tableJKN = $('#tabel-antrian-jkn').DataTable({
+      //   "lengthChange": false, 
+      //   "searching": false, 
+      //   "ajax": "get_antrian.php?jns=jkn", 
 
-      var tableRANAP = $('#tabel-antrian-ranap').DataTable({
-        "lengthChange": false, // non-aktifkan fitur "lengthChange"
-        "searching": false, // non-aktifkan fitur "Search"
-        "ajax": "get_antrian.php?jns=ranap", // url file proses tampil data dari database
-        // menampilkan data
-        "columns": [
-          {
-            "data": "id",
-            "visible": false
-          },
-          {
-            "data": "no_antrian",
-            "width": '250px',
-            "className": 'text-center'
-          },
-          {
-            "data": "status",
-            "visible": false
-          },
-          {
-            "data": null,
-            "orderable": false,
-            "searchable": false,
-            "width": '100px',
-            "className": 'text-center',
-            "render": function(data, type, row) {
-              // jika tidak ada data "status"
-              if (data["status"] === "") {
-                // sembunyikan button panggil
-                var btn = "-";
-              }
-              // jika data "status = 0"
-              else if (data["status"] === "0") {
-                // tampilkan button panggil
-                var btn = "<button class=\"btn btn-success btn-sm rounded-circle\"><i class=\"bi-mic-fill\"></i></button>";
-              }
-              // jika data "status = 1"
-              else if (data["status"] === "1") {
-                // tampilkan button ulangi panggilan
-                var btn = "<button class=\"btn btn-secondary btn-sm rounded-circle\"><i class=\"bi-mic-fill\"></i></button>";
-              }
-              // jika data "status = 1"
-              else if (data["status"] === "2") {
-                // tampilkan button ulangi panggilan
-                var btn = "<button class=\"btn btn-secondary btn-sm rounded-circle\"><i class=\"bi-mic-fill\"></i></button>";
-              };
-              return btn;
-            }
-          },
-        ],
-        "order": [
-          [0, "desc"] // urutkan data berdasarkan "no_antrian" secara descending
-        ],
-        "iDisplayLength": 5, // tampilkan 10 data per halaman
-      });
+      //   "columns": [
+      //     {
+      //       "data": "id",
+      //       "visible": false
+      //     },
+      //     {
+      //       "data": "no_antrian",
+      //       "width": '250px',
+      //       "className": 'text-center'
+      //     },
+      //     {
+      //       "data": "status",
+      //       "visible": false
+      //     },
+      //     {
+      //       "data": null,
+      //       "orderable": false,
+      //       "searchable": false,
+      //       "width": '100px',
+      //       "className": 'text-center',
+      //       "render": function(data, type, row) {
+           
+      //         if (data["status"] === "") {
+              
+      //           var btn = "-";
+      //         }
+           
+      //         else if (data["status"] === "0") {
+               
+      //           var btn = "<button class=\"btn btn-success btn-sm rounded-circle\"><i class=\"bi-mic-fill\"></i></button>";
+      //         }
+       
+      //         else if (data["status"] === "1") {
+       
+      //           var btn = "<button class=\"btn btn-secondary btn-sm rounded-circle\"><i class=\"bi-mic-fill\"></i></button>";
+      //         }
+      //         else if (data["status"] === "2") {
+      //           var btn = "<button class=\"btn btn-secondary btn-sm rounded-circle\"><i class=\"bi-mic-fill\"></i></button>";
+      //         };
+      //         return btn;
+      //       }
+      //     },
+      //   ],
+      //   "order": [
+      //     [0, "desc"] 
+      //   ],
+      //   "iDisplayLength": 5, 
+      // });
+
+      // var tableRANAP = $('#tabel-antrian-ranap').DataTable({
+      //   "lengthChange": false, 
+      //   "searching": false, 
+      //   "ajax": "get_antrian.php?jns=ranap", 
+
+      //   "columns": [
+      //     {
+      //       "data": "id",
+      //       "visible": false
+      //     },
+      //     {
+      //       "data": "no_antrian",
+      //       "width": '250px',
+      //       "className": 'text-center'
+      //     },
+      //     {
+      //       "data": "status",
+      //       "visible": false
+      //     },
+      //     {
+      //       "data": null,
+      //       "orderable": false,
+      //       "searchable": false,
+      //       "width": '100px',
+      //       "className": 'text-center',
+      //       "render": function(data, type, row) {
+            
+      //         if (data["status"] === "") {
+           
+      //           var btn = "-";
+      //         }
+            
+      //         else if (data["status"] === "0") {
+    
+      //           var btn = "<button class=\"btn btn-success btn-sm rounded-circle\"><i class=\"bi-mic-fill\"></i></button>";
+      //         }
+      
+      //         else if (data["status"] === "1") {
+   
+      //           var btn = "<button class=\"btn btn-secondary btn-sm rounded-circle\"><i class=\"bi-mic-fill\"></i></button>";
+      //         }
+ 
+      //         else if (data["status"] === "2") {
+
+      //           var btn = "<button class=\"btn btn-secondary btn-sm rounded-circle\"><i class=\"bi-mic-fill\"></i></button>";
+      //         };
+      //         return btn;
+      //       }
+      //     },
+      //   ],
+      //   "order": [
+      //     [0, "desc"] 
+      //   ],
+      //   "iDisplayLength": 5, 
+      // });
 
 
 
@@ -830,79 +828,79 @@
         });
       });
 
-      $('#tabel-antrian-jkn tbody').on('click', 'button', function() {
-        // ambil data dari datatables 
-        var data = tableJKN.row($(this).parents('tr')).data();
-        console.log(data);
-        // buat variabel untuk menampilkan data "id"
-        var id = data["id"];
-        // buat variabel untuk menampilkan audio bell antrian
-        var bell = document.getElementById('tingtung');
+      // $('#tabel-antrian-jkn tbody').on('click', 'button', function() {
+      //   // ambil data dari datatables 
+      //   var data = tableJKN.row($(this).parents('tr')).data();
+      //   console.log(data);
+      //   // buat variabel untuk menampilkan data "id"
+      //   var id = data["id"];
+      //   // buat variabel untuk menampilkan audio bell antrian
+      //   var bell = document.getElementById('tingtung');
 
-        // mainkan suara bell antrian
-        // bell.pause();
-        // bell.currentTime = 0;
-        // bell.play();
+      //   // mainkan suara bell antrian
+      //   // bell.pause();
+      //   // bell.currentTime = 0;
+      //   // bell.play();
 
-        // set delay antara suara bell dengan suara nomor antrian
-        durasi_bell = bell.duration * 770;
+      //   // set delay antara suara bell dengan suara nomor antrian
+      //   durasi_bell = bell.duration * 770;
 
-        // mainkan suara nomor antrian
-        // setTimeout(function() {
-        //   responsiveVoice.speak("Nomor Antrian, " + data["no_antrian"] + ", menuju, loket", "Indonesian Male", {
-        //     rate: 0.9,
-        //     pitch: 1,
-        //     volume: 1
-        //   });
-        // }, durasi_bell);
+      //   // mainkan suara nomor antrian
+      //   // setTimeout(function() {
+      //   //   responsiveVoice.speak("Nomor Antrian, " + data["no_antrian"] + ", menuju, loket", "Indonesian Male", {
+      //   //     rate: 0.9,
+      //   //     pitch: 1,
+      //   //     volume: 1
+      //   //   });
+      //   // }, durasi_bell);
 
-        // proses update data
-        $.ajax({
-          type: "POST", // mengirim data dengan method POST
-          url: "update.php", // url file proses update data
-          data: {
-            id: id,
-            loket: loket
-          } // tentukan data yang dikirim
-        });
-      });
+      //   // proses update data
+      //   $.ajax({
+      //     type: "POST", // mengirim data dengan method POST
+      //     url: "update.php", // url file proses update data
+      //     data: {
+      //       id: id,
+      //       loket: loket
+      //     } // tentukan data yang dikirim
+      //   });
+      // });
 
-      $('#tabel-antrian-ranap tbody').on('click', 'button', function() {
-        // ambil data dari datatables 
-        var data = tableRANAP.row($(this).parents('tr')).data();
-        console.log(data);
-        // buat variabel untuk menampilkan data "id"
-        var id = data["id"];
-        // buat variabel untuk menampilkan audio bell antrian
-        var bell = document.getElementById('tingtung');
+      // $('#tabel-antrian-ranap tbody').on('click', 'button', function() {
+      //   // ambil data dari datatables 
+      //   var data = tableRANAP.row($(this).parents('tr')).data();
+      //   console.log(data);
+      //   // buat variabel untuk menampilkan data "id"
+      //   var id = data["id"];
+      //   // buat variabel untuk menampilkan audio bell antrian
+      //   var bell = document.getElementById('tingtung');
 
-        // mainkan suara bell antrian
-        // bell.pause();
-        // bell.currentTime = 0;
-        // bell.play();
+      //   // mainkan suara bell antrian
+      //   // bell.pause();
+      //   // bell.currentTime = 0;
+      //   // bell.play();
 
-        // set delay antara suara bell dengan suara nomor antrian
-        durasi_bell = bell.duration * 770;
+      //   // set delay antara suara bell dengan suara nomor antrian
+      //   durasi_bell = bell.duration * 770;
 
-        // mainkan suara nomor antrian
-        // setTimeout(function() {
-        //   responsiveVoice.speak("Nomor Antrian, " + data["no_antrian"] + ", menuju, loket", "Indonesian Male", {
-        //     rate: 0.9,
-        //     pitch: 1,
-        //     volume: 1
-        //   });
-        // }, durasi_bell);
+      //   // mainkan suara nomor antrian
+      //   // setTimeout(function() {
+      //   //   responsiveVoice.speak("Nomor Antrian, " + data["no_antrian"] + ", menuju, loket", "Indonesian Male", {
+      //   //     rate: 0.9,
+      //   //     pitch: 1,
+      //   //     volume: 1
+      //   //   });
+      //   // }, durasi_bell);
 
-        // proses update data
-        $.ajax({
-          type: "POST", // mengirim data dengan method POST
-          url: "update.php", // url file proses update data
-          data: {
-            id: id,
-            loket: loket
-          } // tentukan data yang dikirim
-        });
-      });
+      //   // proses update data
+      //   $.ajax({
+      //     type: "POST", // mengirim data dengan method POST
+      //     url: "update.php", // url file proses update data
+      //     data: {
+      //       id: id,
+      //       loket: loket
+      //     } // tentukan data yang dikirim
+      //   });
+      // });
 
       $('#tabel-antrian-lab tbody').on('click', 'button', function() {
         // ambil data dari datatables 
@@ -954,19 +952,19 @@
         $('#antrian-sekarang-lab').load('get_antrian_sekarang.php?jns=lab').fadeIn("slow");
         $('#antrian-selanjutnya-lab').load('get_antrian_selanjutnya.php?jns=lab').fadeIn("slow");
         $('#sisa-antrian-lab').load('get_sisa_antrian.php?jns=lab').fadeIn("slow");
-        $('#jumlah-antrian-jkn').load('get_jumlah_antrian.php?jns=jkn').fadeIn("slow");
-        $('#antrian-sekarang-jkn').load('get_antrian_sekarang.php?jns=jkn').fadeIn("slow");
-        $('#antrian-selanjutnya-jkn').load('get_antrian_selanjutnya.php?jns=jkn').fadeIn("slow");
-        $('#sisa-antrian-jkn').load('get_sisa_antrian.php?jns=jkn').fadeIn("slow");
-        $('#jumlah-antrian-ranap').load('get_jumlah_antrian.php?jns=ranap').fadeIn("slow");
-        $('#antrian-sekarang-ranap').load('get_antrian_sekarang.php?jns=ranap').fadeIn("slow");
-        $('#antrian-selanjutnya-ranap').load('get_antrian_selanjutnya.php?jns=ranap').fadeIn("slow");
-        $('#sisa-antrian-ranap').load('get_sisa_antrian.php?jns=ranap').fadeIn("slow");
+        // $('#jumlah-antrian-jkn').load('get_jumlah_antrian.php?jns=jkn').fadeIn("slow");
+        // $('#antrian-sekarang-jkn').load('get_antrian_sekarang.php?jns=jkn').fadeIn("slow");
+        // $('#antrian-selanjutnya-jkn').load('get_antrian_selanjutnya.php?jns=jkn').fadeIn("slow");
+        // $('#sisa-antrian-jkn').load('get_sisa_antrian.php?jns=jkn').fadeIn("slow");
+        // $('#jumlah-antrian-ranap').load('get_jumlah_antrian.php?jns=ranap').fadeIn("slow");
+        // $('#antrian-sekarang-ranap').load('get_antrian_sekarang.php?jns=ranap').fadeIn("slow");
+        // $('#antrian-selanjutnya-ranap').load('get_antrian_selanjutnya.php?jns=ranap').fadeIn("slow");
+        // $('#sisa-antrian-ranap').load('get_sisa_antrian.php?jns=ranap').fadeIn("slow");
         tableBPJS.ajax.reload(null, false);
         tableSwasta.ajax.reload(null, false);
         tableLAB.ajax.reload(null, false);
-        tableJKN.ajax.reload(null, false);
-        tableRANAP.ajax.reload(null, false);
+        // tableJKN.ajax.reload(null, false);
+        // tableRANAP.ajax.reload(null, false);
       }, 1000);
     });
   </script>

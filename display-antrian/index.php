@@ -292,7 +292,7 @@
   <script src="https://code.responsivevoice.org/responsivevoice.js?key=fGfsRsUU"></script>
 
 
-  <!-- <script type="text/javascript">
+  <script type="text/javascript">
     $(document).ready(function() {
 
       setInterval(function() {
@@ -332,13 +332,13 @@
               var bell = document.getElementById('tingtung');
 
               // mainkan suara bell antrian
-              bell.pause();
-              bell.currentTime = 0;
-              bell.play();
+              // bell.pause();
+              // bell.currentTime = 0;
+              // bell.play();
               $('#nomor').text(returnedData.data[0]['no_antrian']);
               $('#loket').text(returnedData.data[0]['id_loket']);
               // set delay antara suara bell dengan suara nomor antrian
-              durasi_bell = bell.duration * 770;
+              // durasi_bell = bell.duration * 770;
               // console.log("nomor_antrian : ".returnedData.data[0]['no_antrian']);
               // mainkan suara nomor antrian
               //alert(returnedData.data[0]['id_loket']);
@@ -347,7 +347,7 @@
                 responsiveVoice.speak("Nomor Antrian, " + returnedData.data[0]['no_antrian'] + ", menuju, loket " + returnedData.data[0]['id_loket'], "Indonesian Female", {
                   rate: 0.9,
                   pitch: 1,
-                  volume: 1
+                  volume: 5
                 });
               }, durasi_bell);
 
@@ -374,12 +374,9 @@
         getData();
       }, 1000);
     });
-  </script> -->
-  <script type="text/javascript">
+  </script>
+  <!-- <script type="text/javascript">
     $(document).ready(function () {
-      /* =======================
-        UPDATE DISPLAY LOKET
-      ======================== */
       setInterval(function () {
         for (let i = 1; i <= 10; i++) {
           $('#loket-bar-' + i)
@@ -388,10 +385,6 @@
         }
       }, 1000);
 
-
-      /* =======================
-        HELPER AUDIO
-      ======================== */
       function playAudio(src) {
         return new Promise((resolve) => {
           const audio = new Audio(src);
@@ -413,8 +406,6 @@
       async function speak(num) {
         num = parseInt(num, 10);
         if (num === 0) return;
-
-        // Ratusan
         if (num >= 100) {
           const hundreds = Math.floor(num / 100);
 
@@ -428,8 +419,6 @@
           await speak(num % 100);
           return;
         }
-
-        // Puluhan
         if (num >= 20) {
           const tens = Math.floor(num / 10);
           await playNumber(tens);
@@ -437,22 +426,33 @@
           await speak(num % 10);
           return;
         }
-
-        // Belasan
         if (num >= 12) {
           await playNumber(num - 10);
           await playAudio('../assets/audio/belas.wav');
           return;
         }
-
-        // 1–11
         await playNumber(num);
       }
 
+      async function panggil(data) {
+        const noAntrian = data.no_antrian;
+        const loket = data.id_loket;
+        const { huruf, angka } = splitAntrian(noAntrian);
 
-      /* =======================
-        AMBIL DATA ANTRIAN
-      ======================== */
+        $('#nomor').text(noAntrian);
+        $('#loket').text(loket);
+        $('#loket-bar-' + loket).text(noAntrian);
+
+        await playAudio('../assets/audio/tingtunganyar.mp3');
+        await playAudio('../assets/audio/antrian.wav');
+        await playAudio(`../assets/audio/${huruf}.wav`);
+        await speak(angka.join(''));
+        await playAudio('../assets/audio/loket.wav');
+        await playAudio(`../assets/audio/${loket}.wav`);
+      }
+
+      let isPlaying = false;
+
       function getData() {
         $.ajax({
           type: 'POST',
@@ -461,38 +461,17 @@
             const returnedData = JSON.parse(result);
 
             if (returnedData.data[0]['status'] === 'Sukses') {
+              isPlaying = true;
 
-              const noAntrian = returnedData.data[0]['no_antrian']; // contoh: B12
-              const loket = returnedData.data[0]['id_loket'];
-
-              $('#nomor').text(noAntrian);
-              $('#loket').text(loket);
-              $('#loket-bar-' + loket).text(noAntrian);
-
-              const { huruf, angka } = splitAntrian(noAntrian);
-
-              try {
-                await playAudio('../assets/audio/tingtunganyar.mp3');
-                await playAudio('../assets/audio/antrian.wav');
-                await playAudio(`../assets/audio/${huruf}.wav`);
-                await speak(angka.join(''));
-                await playAudio('../assets/audio/loket.wav');
-                await playAudio(`../assets/audio/${loket}.wav`);
-
-              } catch (err) {
-                console.error("Error audio:", err);
-              }
+              await panggil(returnedData.data[0]);
 
               update(returnedData.data[0]['id']);
+              isPlaying = false;
             }
           }
         });
       }
 
-
-      /* =======================
-        UPDATE STATUS DATABASE
-      ======================== */
       function update(id) {
         $.ajax({
           type: "POST",
@@ -501,16 +480,12 @@
         });
       }
 
-
-      /* =======================
-        AUTO PANGGIL DATA
-      ======================== */
       setInterval(function () {
         getData();
       }, 1000);
 
     });
-  </script>
+  </script> -->
 
 </body>
 
