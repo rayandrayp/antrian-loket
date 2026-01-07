@@ -16,6 +16,8 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
       $jenis = 'RANAP';
   } elseif ($jns === 'jkn') {
       $jenis = 'JKN';
+  } elseif ($jns === 'khusus') {
+      $jenis = 'KHUSUS';
   } else {
       $jenis = 'Swasta';
   }
@@ -41,8 +43,9 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
       $data['no_antrian'] = $data['no_antrian'] =
                             ($row["jenis"] === 'BPJS' ? 'B' :
                             ($row["jenis"] === 'LAB'  ? 'L' :
-                            ($row["jenis"] === 'RANAP'  ? 'R' :  
-                            ($row["jenis"] === 'JKN'  ? 'J' : 'A')))) . $row["no_antrian"];
+                            ($row["jenis"] === 'RANAP'  ? 'R' :
+                            ($row["jenis"] === 'KHUSUS'  ? 'S' :    
+                            ($row["jenis"] === 'JKN'  ? 'J' : 'A'))))) . $row["no_antrian"];
       $data['status']     = $row["status"];
 
       array_push($response["data"], $data);

@@ -38,12 +38,12 @@
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
-<body class="d-flex flex-column h-100">
-  <main class="flex-shrink-0">
-    <div class="container pt-5">
-      <div class="row justify-content-lg-center">
+<body class="d-flex min-vh-100">
+  <main class="d-flex align-items-center justify-content-center w-100">
+    <div class="container">
+      <div class="row justify-content-center g-4">
         
-        <div class="col-lg-4 mb-4"> 
+        <div class="col-lg-3 col-md-6">
           <div class="card border-0 shadow-sm">
             <div id="printAntrianLoketBPJS" style="display: none;" class="cetak">
               <div style="width: 200px; font-family: Tahoma; margin-top: 10px; margin-right: 5px; margin-bottom: 100px; margin-left: 15px; font-size: 21px !important;border: 0px solid #000;">
@@ -58,8 +58,8 @@
               </div>
             </div>
             <div id="display_nomor_loket"></div>
-            <div class="card-body text-center d-grid p-5">
-              <div class="border border-success rounded-2 py-2 mb-5">
+            <div class="card-body text-center d-grid p-4">
+              <div class="border border-success rounded-3 py-3 mb-3">
                 <h3 class="pt-4">ANTRIAN BPJS</h3>
                 <!-- menampilkan informasi jumlah antrian -->
                 <h1 id="antrianBPJS" class="display-1 fw-bold text-success text-center lh-1 pb-2"></h1>
@@ -73,7 +73,7 @@
 
         </div>
 
-        <div class="col-lg-4 mb-4">
+        <div class="col-lg-3 col-md-6">
           <div class="card border-0 shadow-sm">
             <div id="printAntrianLoketSwasta" style="display: none;" class="cetak">
               <div style="width: 200px; font-family: Tahoma; margin-top: 10px; margin-right: 5px; margin-bottom: 100px; margin-left: 15px; font-size: 21px !important;border: 0px solid #000;">
@@ -88,8 +88,8 @@
               </div>
             </div>
             <div id="display_nomor_loket"></div>
-            <div class="card-body text-center d-grid p-5">
-              <div class="border border-success rounded-2 py-2 mb-5">
+            <div class="card-body text-center d-grid p-4">
+              <div class="border border-success rounded-3 py-3 mb-3">
                 <h3 class="pt-4">ANTRIAN Swasta</h3>
                 <!-- menampilkan informasi jumlah antrian -->
                 <h1 id="antrianSwasta" class="display-1 fw-bold text-success text-center lh-1 pb-2"></h1>
@@ -102,7 +102,7 @@
           </div>
         </div>
 
-        <div class="col-lg-4 mb-4">
+        <div class="col-lg-3 col-md-6">
           <div class="card border-0 shadow-sm">
             <div id="printAntrianLoketLAB" style="display: none;" class="cetak">
               <div style="width: 200px; font-family: Tahoma; margin-top: 10px; margin-right: 5px; margin-bottom: 100px; margin-left: 15px; font-size: 21px !important;border: 0px solid #000;">
@@ -117,9 +117,9 @@
               </div>
             </div>
             <div id="display_nomor_loket"></div>
-            <div class="card-body text-center d-grid p-5">
-              <div class="border border-success rounded-2 py-2 mb-5">
-                <h3 class="pt-4">ANTRIAN LABORAT</h3>
+            <div class="card-body text-center d-grid p-4">
+              <div class="border border-success rounded-3 py-3 mb-3">
+                <h3 class="pt-4">ANTRIAN LAB</h3>
                 <!-- menampilkan informasi jumlah antrian -->
                 <h1 id="antrianLAB" class="display-1 fw-bold text-success text-center lh-1 pb-2"></h1>
               </div>
@@ -131,14 +131,14 @@
           </div>
         </div>
 
-         <!-- <div class="col-lg-4 mb-4">
+        <div class="col-lg-3 col-md-6">
           <div class="card border-0 shadow-sm">
-            <div id="printAntrianLoketJKN" style="display: none;" class="cetak">
+            <div id="printAntrianLoketKHUSUS" style="display: none;" class="cetak">
               <div style="width: 200px; font-family: Tahoma; margin-top: 10px; margin-right: 5px; margin-bottom: 100px; margin-left: 15px; font-size: 21px !important;border: 0px solid #000;">
                 <p style="font-size:14px;" align="center">RS Tk. II dr. Soepraoen<br><span class="small">Jl. S. Supriyadi No.22 , Sukun</span></p>
                 <hr>
-                <p align="center">Antrian Loket Mobile JKN</p>
-                <div id="antrianJKN1" align="center" style="font-size:72px !important;"></div>
+                <p align="center">Antrian Loket Khusus</p>
+                <div id="antrianKHUSUS1" align="center" style="font-size:72px !important;"></div>
                 <br>
                 <br>
                 <br>
@@ -146,58 +146,31 @@
               </div>
             </div>
             <div id="display_nomor_loket"></div>
-            <div class="card-body text-center d-grid p-5">
-              <div class="border border-success rounded-2 py-2 mb-5">
-                <h3 class="pt-4">ANTRIAN MOBILE JKN</h3>
-                <h1 id="antrianJKN" class="display-1 fw-bold text-success text-center lh-1 pb-2"></h1>
+            <div class="card-body text-center d-grid p-4">
+              <div class="border border-success rounded-3 py-3 mb-3">
+                <h3 class="pt-4">ANTRIAN Khusus</h3>
+                <!-- menampilkan informasi jumlah antrian -->
+                <h1 id="antrianKHUSUS" class="display-1 fw-bold text-success text-center lh-1 pb-2"></h1>
               </div>
-              <a id="insertJKN" href="javascript:void(0)" class="btn btn-success btn-block rounded-pill fs-5 px-5 py-4 mb-2">
+              <!-- button pengambilan nomor antrian -->
+              <a id="insertKHUSUS" href="javascript:void(0)" class="btn btn-success btn-block rounded-pill fs-5 px-5 py-4 mb-2">
                 <i class="bi-person-plus fs-4 me-2"></i> Ambil Nomor
               </a>
             </div>
           </div>
-        </div> -->
-
-         <!-- <div class="col-lg-4 mb-4">
-          <div class="card border-0 shadow-sm">
-            <div id="printAntrianLoketRANAP" style="display: none;" class="cetak">
-              <div style="width: 200px; font-family: Tahoma; margin-top: 10px; margin-right: 5px; margin-bottom: 100px; margin-left: 15px; font-size: 21px !important;border: 0px solid #000;">
-                <p style="font-size:14px;" align="center">RS Tk. II dr. Soepraoen<br><span class="small">Jl. S. Supriyadi No.22 , Sukun</span></p>
-                <hr>
-                <p align="center">Antrian Loket Rawat Inap</p>
-                <div id="antrianRANAP1" align="center" style="font-size:72px !important;"></div>
-                <br>
-                <br>
-                <br>
-                <hr>
-              </div>
-            </div>
-            <div id="display_nomor_loket"></div>
-            <div class="card-body text-center d-grid p-5">
-              <div class="border border-success rounded-2 py-2 mb-5">
-                <h3 class="pt-4">ANTRIAN Rawat Inap</h3>
-                <h1 id="antrianRANAP" class="display-1 fw-bold text-success text-center lh-1 pb-2"></h1>
-              </div>
-              <a id="insertRANAP" href="javascript:void(0)" class="btn btn-success btn-block rounded-pill fs-5 px-5 py-4 mb-2">
-                <i class="bi-person-plus fs-4 me-2"></i> Ambil Nomor
-              </a>
-            </div>
-          </div>
-        </div> -->
+        </div>
 
       </div>
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer mt-auto py-4">
+  <!-- <footer class="footer mt-auto py-4">
     <div class="container">
-      <!-- copyright -->
       <div class="copyright text-center mb-2 mb-md-0">
         &copy; 2021 - <a href="https://www.indrasatya.com/" target="_blank" class="text-danger text-decoration-none">www.indrasatya.com</a>. All rights reserved.
       </div>
     </div>
-  </footer>
+  </footer> -->
 
   <!-- jQuery Core -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -231,6 +204,9 @@
 
       $('#antrianRANAP1').load('get_antrian.php?jns=ranap');
       $('#antrianRANAP').load('get_antrian.php?jns=ranap');
+
+      $('#antrianKHUSUS1').load('get_antrian.php?jns=khusus');
+      $('#antrianKHUSUS').load('get_antrian.php?jns=khusus');
       
 
       // proses insert data
@@ -314,6 +290,22 @@
           },
         });
         printDiv('printAntrianLoketRANAP');
+      });
+
+      $('#insertKHUSUS').on('click', function() {
+        $.ajax({
+          type: 'POST',                     // mengirim data dengan method POST
+          url: 'insert.php?jns=khusus',                // url file proses insert data
+          success: function(result) {       // ketika proses insert data selesai
+            // jika berhasil
+            if (result === 'Sukses') {
+              // tampilkan jumlah antrian
+              $('#antrianKHUSUS').load('get_antrian.php?jns=khusus').fadeIn('slow');
+              $('#antrianKHUSUS1').load('get_antrian.php?jns=khusus').fadeIn('slow');
+            }
+          },
+        });
+        printDiv('printAntrianLoketKHUSUS');
       });
 
     });

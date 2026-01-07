@@ -15,6 +15,8 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
     $format = 'R';
   } elseif ($jenis == 'jkn') {
     $format = 'J';
+  } elseif ($jenis == 'khusus') {
+    $format = 'S';
   } else {
     $format = 'A'; 
   }

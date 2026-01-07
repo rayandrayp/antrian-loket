@@ -22,6 +22,7 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && ($_SERVER['HTTP_X_REQUESTED_WITH
     case 'LAB':   $kodeJenis = 'L'; break;
     case 'JKN':   $kodeJenis = 'J'; break;
     case 'RANAP': $kodeJenis = 'R'; break;
+    case 'KHUSUS': $kodeJenis = 'S'; break;
     default:      $kodeJenis = 'A';
   }
 
